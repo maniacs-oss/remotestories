@@ -1,4 +1,4 @@
-# Remote Stories
+# Remote Stories [![Build Status](https://travis-ci.org/ayrton/remotestories.svg?branch=master)](https://travis-ci.org/ayrton/remotestories)
 
 ## Installation
 
