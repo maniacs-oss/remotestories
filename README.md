@@ -1,5 +1,7 @@
 # Remote Stories [![Build Status](https://travis-ci.org/ayrton/remotestories.svg?branch=master)](https://travis-ci.org/ayrton/remotestories)
 
+Anonymous stories from remote workers.
+
 ## Installation
 
 ```sh

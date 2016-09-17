@@ -1,6 +1,7 @@
 {
   "name": "remotestories",
   "version": "0.1.0",
+  "description": "Anonymous stories from remote workers",
   "engines": {
     "node": "6.6.0"
   },
