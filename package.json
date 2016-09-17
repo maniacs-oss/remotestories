@@ -7,6 +7,7 @@
   },
   "private": true,
   "devDependencies": {
+    "flow-bin": "^0.32.0",
     "react-scripts": "0.4.1"
   },
   "dependencies": {
@@ -16,7 +17,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "npm run test:flow && npm run test:unit",
+    "test:flow": "flow check",
+    "test:unit": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
