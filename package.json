@@ -1,6 +1,9 @@
 {
   "name": "remotestories",
   "version": "0.1.0",
+  "engines": {
+    "node": "6.6.0"
+  },
   "private": true,
   "devDependencies": {
     "react-scripts": "0.4.1"
