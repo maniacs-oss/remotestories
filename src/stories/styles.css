@@ -1,0 +1,58 @@
+.Stories {
+  list-style: none;
+  padding: 0;
+}
+
+.Stories-item {
+  border-bottom: 1px solid #f6f7f9;
+  margin: 0 0 30px;
+  padding: 0 0 15px;
+}
+
+.Stories-Story-body {
+  color: #4b4f56;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  margin: 0 0 20px;
+}
+
+.Stories-Story-meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Stories-Story-meta-button {
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid #e9ebee;
+  color: #90949c;
+  display: flex;
+  float: left;
+  font-size: 11px;
+  font-weight: 700;
+  height: 23px;
+  margin: 0 10px 0 0;
+  padding: 0 10px;
+}
+
+.Stories-Story-meta-button:hover {
+  color: #4b4f56;
+}
+
+.Stories-Story-meta-button:last-child {
+  margin: 0;
+}
+
+.Stories-Story-meta-button-emoji {
+  font-size: 15px;
+}
+
+.Stories-Story-meta-time {
+  color: #bec2c9;
+  font-size: 11px;
+}
+
+.Stories-Story-meta-time:hover {
+  color: #4b4f56;
+}

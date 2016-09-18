@@ -2,6 +2,7 @@
 
 import './App.css';
 import React, { Component } from 'react';
+import Stories from './stories';
 import logo from './logo.svg';
 
 export default class App extends Component {
@@ -29,6 +30,7 @@ export default class App extends Component {
           </ul>
         </nav>
 
+        <Stories />
       </div>
     );
   }
