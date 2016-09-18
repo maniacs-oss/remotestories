@@ -18,6 +18,7 @@
 }
 
 .Stories-Story-meta {
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -31,7 +32,7 @@
   float: left;
   font-size: 11px;
   font-weight: 700;
-  height: 23px;
+  height: 25px;
   margin: 0 10px 0 0;
   padding: 0 10px;
 }
@@ -45,7 +46,7 @@
 }
 
 .Stories-Story-meta-button-emoji {
-  font-size: 15px;
+  font-size: 120%;
 }
 
 .Stories-Story-meta-time {
