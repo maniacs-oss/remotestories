@@ -1,15 +1,15 @@
 /* @flow */
 
+import './App.css';
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
         <nav className="App-navigation">
-          <a className="App-navigation-logo-active" href="#">
+          <a href="#">
             <img src={logo} alt="Remote Stories" />
           </a>
 
@@ -29,15 +29,7 @@ class App extends Component {
           </ul>
         </nav>
 
-        <div>
-          <h2>Welcome to React</h2>
-        </div>
-        <p>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
 }
-
-export default App;

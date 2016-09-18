@@ -12,24 +12,6 @@
   margin: 0 0 30px;
 }
 
-.App-navigation-logo,
-.App-navigation-logo-active,
-.App-navigation-list-link,
-.App-navigation-list-link-active {
-  height: inherit;
-  border-bottom: 5px solid transparent;
-}
-
-.App-navigation-logo:hover,
-.App-navigation-list-link:hover {
-  border-color: #90949c;
-}
-
-.App-navigation-logo-active,
-.App-navigation-list-link-active {
-  border-color: #5c69ff;
-}
-
 .App-navigation-list {
   height: inherit;
 }
@@ -47,7 +29,21 @@
 
 .App-navigation-list-link,
 .App-navigation-list-link-active {
-  color: #90949c;
+  border-bottom: 5px solid transparent;
   display: block;
   font-size: 14px;
+  height: inherit;
+}
+
+.App-navigation-list-link {
+  color: #90949c;
+}
+
+.App-navigation-list-link:hover,
+.App-navigation-list-link-active {
+  color: #4b4f56;
+}
+
+.App-navigation-list-link-active {
+  border-color: #5c69ff;
 }
