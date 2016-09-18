@@ -1,6 +1,7 @@
 .App {
   margin: 55px auto 0;
-  width: 820px;
+  padding: 0 10px;
+  max-width: 840px;
 }
 
 .App-navigation {
