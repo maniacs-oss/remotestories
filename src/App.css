@@ -1,49 +1,93 @@
 .App {
-  margin: 55px auto 0;
-  padding: 0 10px;
-  max-width: 840px;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-.App-navigation {
+.App-content {
+  box-sizing: border-box;
+  margin: 30px auto 0;
+}
+
+.App-content-navigation {
   border-bottom: 5px solid #f6f7f9;
   display: flex;
-  height: 50px;
-  justify-content: space-between;
   margin: 0 0 30px;
 }
 
-.App-navigation-list {
+.App-content-navigation-list {
   height: inherit;
 }
 
-.App-navigation-list li {
+.App-content-navigation-list li {
   display: block;
   float: left;
   height: inherit;
   margin: 0 20px 0 0;
 }
 
-.App-navigation-list li:last-child {
+.App-content-navigation-list li:last-child {
   margin: 0;
 }
 
-.App-navigation-list-link,
-.App-navigation-list-link-active {
-  border-bottom: 5px solid transparent;
+.App-content-navigation-list-link,
+.App-content-navigation-list-link-active {
   display: block;
   font-size: 14px;
   height: inherit;
 }
 
-.App-navigation-list-link {
+.App-content-navigation-list-link {
   color: #90949c;
 }
 
-.App-navigation-list-link:hover,
-.App-navigation-list-link-active {
+.App-content-navigation-list-link:hover,
+.App-content-navigation-list-link-active {
   color: #4b4f56;
 }
 
-.App-navigation-list-link-active {
+.App-content-navigation-list-link-active {
   border-color: #5c69ff;
+}
+
+@media (max-width: 768px) {
+  .App-content {
+    padding: 0 10px;
+  }
+
+  .App-content-navigation {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .App-content-navigation-logo {
+    margin: 0 0 20px;
+  }
+
+  .App-content-navigation-list {
+    margin: 0 0 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .App-illustration {
+    background: #5c69ff;
+    width: 30%;
+  }
+
+  .App-content {
+    max-width: 640px;
+    padding: 0 20px;
+    width: 70%;
+  }
+
+  .App-content-navigation {
+    flex-flow: row nowrap;
+    height: 50px;
+    justify-content: space-between;
+  }
+
+  .App-content-navigation-list-link,
+  .App-content-navigation-list-link-active {
+    border-bottom: 5px solid transparent;
+  }
 }
