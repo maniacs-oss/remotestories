@@ -1,11 +1,18 @@
 .App {
   display: flex;
   flex-flow: row nowrap;
+  min-height: 100vh;
 }
 
 .App-content {
   box-sizing: border-box;
   margin: 30px auto 0;
+  width: 100%;
+}
+
+.App-content-navigation {
+  display: flex;
+  align-items: flex-start;
 }
 
 .App-content-navigation {
@@ -45,10 +52,6 @@
   color: #4b4f56;
 }
 
-.App-content-navigation-list-link-active {
-  border-color: #5c69ff;
-}
-
 @media (max-width: 768px) {
   .App-content {
     padding: 0 10px;
@@ -86,8 +89,8 @@
     justify-content: space-between;
   }
 
-  .App-content-navigation-list-link,
   .App-content-navigation-list-link-active {
-    border-bottom: 5px solid transparent;
+    border-bottom: 5px solid #5c69ff;
   }
+
 }
