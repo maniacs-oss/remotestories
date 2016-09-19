@@ -1,6 +1,6 @@
 /* @flow */
 
-import './index.css';
+import './styles.css';
 import 'sanitize.css/sanitize.css';
 import App from './App';
 import React from 'react';
