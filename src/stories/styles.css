@@ -1,12 +1,15 @@
 .Stories {
   list-style: none;
-  padding: 0;
 }
 
 .Stories-item {
   border-bottom: 1px solid #f6f7f9;
   margin: 0 0 30px;
   padding: 0 0 15px;
+}
+
+.Stories-item:last-child {
+  margin: 0;
 }
 
 .Stories-Story-body {

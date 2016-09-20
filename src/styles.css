@@ -12,8 +12,9 @@ a {
   text-decoration: none;
 }
 
-nav ol,
-nav ul {
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
 }
