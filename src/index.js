@@ -1,7 +1,7 @@
 /* @flow */
 
-import './styles.css';
 import 'sanitize.css/sanitize.css';
+import './styles.css'; // NOTE order is of importance since we're overriding things from sanitize.css
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
