@@ -1,7 +1,5 @@
 .App {
-  display: flex;
-  flex-flow: row nowrap;
-  min-height: 100vh;
+  position: relative;
 }
 
 .App-content {
@@ -53,6 +51,10 @@
 }
 
 @media (max-width: 768px) {
+  .App-illustration {
+    display: none;
+  }
+
   .App-content {
     padding: 0 20px;
   }
@@ -73,14 +75,28 @@
 
 @media (min-width: 769px) {
   .App-illustration {
+    align-items: center;
     background: #5c69ff;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
     width: 30%;
+  }
+
+  .App-illustration-image {
+    width: 90%;
+  }
+
+  .App-container {
+    width: 70%;
+    margin: 0 0 0 auto;
   }
 
   .App-content {
     max-width: 640px;
     padding: 0 20px;
-    width: 70%;
   }
 
   .App-content-navigation {
