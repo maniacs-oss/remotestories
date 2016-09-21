@@ -1,12 +1,12 @@
 /* @flow */
 
-import './App.css';
-import About from './about';
-import New from './new';
-import Popular from './popular';
+import './styles.css';
+import About from '../pages/about';
+import New from '../pages/new';
+import Popular from '../pages/popular';
 import React from 'react';
-import Stories from './stories';
-import Submit from './submit';
+import Stories from '../pages/stories';
+import Submit from '../pages/submit';
 import logo from './logo.svg';
 import { BrowserRouter, Match, Link } from 'react-router'
 
