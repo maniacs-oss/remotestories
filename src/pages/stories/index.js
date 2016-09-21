@@ -22,7 +22,7 @@ export default function Stories() {
   return (
     <ol className="Stories">
       {STORIES.map((story, index) =>
-        <li className="Stories-item" key={index}>
+        <li key={index}>
           <Story story={story} />
         </li>
       )}

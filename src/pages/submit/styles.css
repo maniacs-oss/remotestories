@@ -44,18 +44,18 @@
   justify-content: space-between;
 }
 
-.Submit-form-action-tos {
+.Submit-form-tos {
   color: #90949c;
   font-size: 12px;
   line-height: 14px;
   margin: 0 10px 0 0;
 }
 
-.Submit-form-action-tos a {
+.Submit-form-tos a {
   color: #5c69ff;
 }
 
-.Submit-form-action-button {
+.Submit-form-button {
   background: #5c69ff;
   border-radius: 3px;
   color: #fff;

@@ -22,29 +22,29 @@ export default function App() {
 
         <div className="App-container">
           <div className="App-content">
-            <nav className="App-content-navigation">
-              <Link className="App-content-navigation-logo" to="/">
+            <nav className="App-navigation">
+              <Link className="App-navigation-logo" to="/">
                 <img src={logo} alt="Remote Stories" />
               </Link>
 
-              <ul className="App-content-navigation-list">
+              <ul className="App-navigation-list">
                 <li>
-                  <Link activeClassName="App-content-navigation-list-link-active" className="App-content-navigation-list-link" to="/about">
+                  <Link activeClassName="App-navigation-link-active" className="App-navigation-link" to="/about">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="App-content-navigation-list-link-active" className="App-content-navigation-list-link" to="/new">
+                  <Link activeClassName="App-navigation-link-active" className="App-navigation-link" to="/new">
                     New
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="App-content-navigation-list-link-active" className="App-content-navigation-list-link" to="/popular">
+                  <Link activeClassName="App-navigation-link-active" className="App-navigation-link" to="/popular">
                     Popular
                   </Link>
                 </li>
                 <li>
-                  <Link activeClassName="App-content-navigation-list-link-active" className="App-content-navigation-list-link" to="/submit">
+                  <Link activeClassName="App-navigation-link-active" className="App-navigation-link" to="/submit">
                     Submit
                   </Link>
                 </li>

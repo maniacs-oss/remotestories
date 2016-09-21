@@ -8,45 +8,41 @@
   width: 100%;
 }
 
-.App-content-navigation {
-  display: flex;
+.App-navigation {
   align-items: flex-start;
-}
-
-.App-content-navigation {
   border-bottom: 5px solid #f6f7f9;
   display: flex;
   margin: 0 0 30px;
 }
 
-.App-content-navigation-list {
+.App-navigation-list {
   height: inherit;
 }
 
-.App-content-navigation-list li {
+.App-navigation-list li {
   display: block;
   float: left;
   height: inherit;
   margin: 0 20px 0 0;
 }
 
-.App-content-navigation-list li:last-child {
+.App-navigation-list li:last-child {
   margin: 0;
 }
 
-.App-content-navigation-list-link,
-.App-content-navigation-list-link-active {
+.App-navigation-link,
+.App-navigation-link-active {
   display: block;
   font-size: 14px;
   height: inherit;
 }
 
-.App-content-navigation-list-link {
+.App-navigation-link {
   color: #90949c;
 }
 
-.App-content-navigation-list-link:hover,
-.App-content-navigation-list-link-active {
+.App-navigation-link:hover,
+.App-navigation-link-active {
   color: #4b4f56;
 }
 
@@ -59,16 +55,16 @@
     padding: 0 20px;
   }
 
-  .App-content-navigation {
+  .App-navigation {
     flex-flow: column nowrap;
     align-items: center;
   }
 
-  .App-content-navigation-logo {
+  .App-navigation-logo {
     margin: 0 0 20px;
   }
 
-  .App-content-navigation-list {
+  .App-navigation-list {
     margin: 0 0 20px;
   }
 }
@@ -99,13 +95,13 @@
     padding: 0 20px;
   }
 
-  .App-content-navigation {
+  .App-navigation {
     flex-flow: row nowrap;
     height: 50px;
     justify-content: space-between;
   }
 
-  .App-content-navigation-list-link-active {
+  .App-navigation-link-active {
     border-bottom: 5px solid #5c69ff;
   }
 }

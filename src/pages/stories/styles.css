@@ -2,13 +2,13 @@
   list-style: none;
 }
 
-.Stories-item {
+.Stories li {
   border-bottom: 1px solid #f6f7f9;
   margin: 0 0 30px;
   padding: 0 0 15px;
 }
 
-.Stories-item:last-child {
+.Stories li:last-child {
   margin: 0;
 }
 

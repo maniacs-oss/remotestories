@@ -18,8 +18,8 @@ export default function Submit() {
           </label>
 
           <div className="Submit-form-action">
-            <p className="Submit-form-action-tos">By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use.</a></p>
-            <button className="Submit-form-action-button">post</button>
+            <p className="Submit-form-tos">By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use.</a></p>
+            <button className="Submit-form-button">post</button>
           </div>
         </form>
       </div>
