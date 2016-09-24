@@ -1,12 +1,12 @@
 /* @flow */
 
 import './styles.css';
-import About from '../pages/about';
-import New from '../pages/new';
-import Popular from '../pages/popular';
+import About from 'src/pages/about';
+import New from 'src/pages/new';
+import Popular from 'src/pages/popular';
 import React from 'react';
-import Stories from '../pages/stories';
-import Submit from '../pages/submit';
+import Stories from 'src/pages/stories';
+import Submit from 'src/pages/submit';
 import illustration1 from './illustration-1.jpg';
 import illustration2 from './illustration-2.jpg';
 import logo from './logo.svg';
