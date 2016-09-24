@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.App-container {
+  overflow: auto; /* NOTE respect margin-bottom defined on .App-content in Safari. */
+}
+
 .App-content {
   box-sizing: border-box;
   margin: 30px auto;
