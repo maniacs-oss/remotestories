@@ -2,10 +2,11 @@
 
 import './styles.css';
 import About from 'src/pages/about';
+import Home from 'src/pages/home';
 import New from 'src/pages/new';
 import Popular from 'src/pages/popular';
 import React from 'react';
-import Home from 'src/pages/home';
+import StoryDetail from 'src/pages/story-detail';
 import Submit from 'src/pages/submit';
 import illustration1 from './illustration-1.jpg';
 import illustration2 from './illustration-2.jpg';
@@ -56,6 +57,7 @@ export default function App() {
             <Match pattern="/new" component={New} />
             <Match pattern="/popular" component={Popular} />
             <Match pattern="/submit" component={Submit} />
+            <Match pattern="/stories/:id" component={StoryDetail} />
           </div>
         </div>
       </div>

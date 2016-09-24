@@ -5,6 +5,7 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   min-height: 100%;
+  overflow-y: scroll; /* NOTE always show scroll bar to prevent document-width-jumping */
 }
 
 a {
