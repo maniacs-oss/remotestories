@@ -18,9 +18,9 @@ const STORIES = [
   },
 ];
 
-export default function Stories() {
+export default function StoryList() {
   return (
-    <ol className="Stories">
+    <ol className="StoryList">
       {STORIES.map((story, index) =>
         <li key={index}>
           <Story story={story} />
@@ -32,19 +32,19 @@ export default function Stories() {
 
 function Story({ story }) {
   return (
-    <div className="Stories-Story">
-      <div className="Stories-Story-body">
+    <div className="Story">
+      <div className="Story-body">
         {story.body}
       </div>
 
-      <div className="Stories-Story-meta">
+      <div className="Story-meta">
         <div>
-          <a className="Stories-Story-meta-button" href="#"><span className="Stories-Story-meta-button-emoji">😄</span>&nbsp;{random(100)}</a>
-          <a className="Stories-Story-meta-button" href="#"><span className="Stories-Story-meta-button-emoji">😰</span>&nbsp;{random(50)}</a>
-          <a className="Stories-Story-meta-button" href="#">{random(15)}&nbsp;<span className="Stories-Story-meta-button-emoji">💬</span></a>
+          <a className="Story-meta-button" href="#"><span className="Story-meta-button-emoji">😄</span>&nbsp;{random(100)}</a>
+          <a className="Story-meta-button" href="#"><span className="Story-meta-button-emoji">😰</span>&nbsp;{random(50)}</a>
+          <a className="Story-meta-button" href="#">{random(15)}&nbsp;<span className="Story-meta-button-emoji">💬</span></a>
         </div>
 
-        <a className="Stories-Story-meta-time" href="#">
+        <a className="Story-meta-time" href="#">
           <time>09.16.16 8:31am →</time>
         </a>
       </div>

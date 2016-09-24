@@ -5,7 +5,7 @@ import About from 'src/pages/about';
 import New from 'src/pages/new';
 import Popular from 'src/pages/popular';
 import React from 'react';
-import Stories from 'src/pages/stories';
+import Home from 'src/pages/home';
 import Submit from 'src/pages/submit';
 import illustration1 from './illustration-1.jpg';
 import illustration2 from './illustration-2.jpg';
@@ -51,7 +51,7 @@ export default function App() {
               </ul>
             </nav>
 
-            <Match exactly pattern="/" component={Stories} />
+            <Match exactly pattern="/" component={Home} />
             <Match pattern="/about" component={About} />
             <Match pattern="/new" component={New} />
             <Match pattern="/popular" component={Popular} />

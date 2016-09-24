@@ -1,18 +1,18 @@
-.Stories {
+.StoryList {
   list-style: none;
 }
 
-.Stories li {
+.StoryList li {
   border-bottom: 1px solid #f6f7f9;
   margin: 0 0 30px;
   padding: 0 0 15px;
 }
 
-.Stories li:last-child {
+.StoryList li:last-child {
   margin: 0;
 }
 
-.Stories-Story-body {
+.Story-body {
   color: #4b4f56;
   font-size: 20px;
   font-weight: 300;
@@ -20,13 +20,13 @@
   margin: 0 0 20px;
 }
 
-.Stories-Story-meta {
+.Story-meta {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
-.Stories-Story-meta-button {
+.Story-meta-button {
   align-items: center;
   border-radius: 3px;
   border: 1px solid #e9ebee;
@@ -40,23 +40,23 @@
   padding: 0 10px;
 }
 
-.Stories-Story-meta-button:hover {
+.Story-meta-button:hover {
   color: #4b4f56;
 }
 
-.Stories-Story-meta-button:last-child {
+.Story-meta-button:last-child {
   margin: 0;
 }
 
-.Stories-Story-meta-button-emoji {
+.Story-meta-button-emoji {
   font-size: 120%;
 }
 
-.Stories-Story-meta-time {
+.Story-meta-time {
   color: #bec2c9;
   font-size: 11px;
 }
 
-.Stories-Story-meta-time:hover {
+.Story-meta-time:hover {
   color: #4b4f56;
 }
