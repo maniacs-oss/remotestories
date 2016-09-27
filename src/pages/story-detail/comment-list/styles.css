@@ -1,0 +1,31 @@
+.CommentList {
+  list-style: none;
+  margin: 0 0 5px;
+}
+
+.CommentList li {
+  margin: 0 0 2px;
+}
+
+.CommentList li:last-child {
+  margin: 0;
+}
+
+.Comment-body {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 300;
+}
+
+.Comment-time {
+  text-align: right;
+}
+
+.Time {
+  color: #bec2c9;
+  font-size: 11px;
+}
+
+.Time:hover {
+  color: #4b4f56;
+}
