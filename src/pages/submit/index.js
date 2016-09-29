@@ -1,7 +1,10 @@
 /* @flow */
 
 import './styles.css';
+import Box from 'src/shared/box';
 import React from 'react';
+
+const LABEL = <label htmlFor="body">Your story</label>;
 
 export default function Submit() {
   return (
@@ -10,19 +13,16 @@ export default function Submit() {
         Submit your Story. It’s anonymous.
       </h1>
 
-      <div className="Submit-box Submit-form">
-        <form>
-          <label>
-            <span className="Submit-form-label">Your story</span>
-            <textarea className="Submit-form-textarea" />
-          </label>
+      <form className="Submit-form">
+        <Box title={LABEL}>
+          <textarea className="Submit-form-textarea" id="body" />
 
           <div className="Submit-form-action">
             <p className="Submit-form-tos">By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use.</a></p>
             <button className="Submit-form-button">post</button>
           </div>
-        </form>
-      </div>
+        </Box>
+      </form>
 
       <h2 className="Submit-heading">
         Tips about posting your story

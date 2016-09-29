@@ -5,21 +5,8 @@
   margin: 0 0 30px;
 }
 
-.Submit-box {
-  background: #f6f7f9;
-  padding: 20px 20px 30px;
-}
-
 .Submit-form {
   margin: 0 0 60px;
-}
-
-.Submit-form-label {
-  color: #90949c;
-  display: block;
-  font-size: 14px;
-  line-height: 20px;
-  margin: 0 0 10px;
 }
 
 .Submit-form-textarea {
@@ -39,6 +26,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin: 0 0 10px;
 }
 
 .Submit-form-tos {

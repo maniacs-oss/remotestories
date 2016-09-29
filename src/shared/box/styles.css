@@ -9,6 +9,6 @@
   line-height: 20px;
 }
 
-.Box-title ~ * {
+.Box-title ~ :nth-child(2) {
   margin-top: 10px;
 }
