@@ -24,16 +24,12 @@ export const COMMENTS = [
     id: 1,
     body: 'Man.. I am sorry you had to burn a persy day just to avoid the office..',
     story_id: 1,
-    user_uuid: humanreadableUuid(),
+    user_id: 1,
   },
   {
     id: 2,
     body: 'What?',
     story_id: 1,
-    user_uuid: humanreadableUuid(),
-  }
-]
-
-function humanreadableUuid(): string {
-  return Math.random().toString(36).slice(2).substr(0, 5);
-}
+    user_id: 2,
+  },
+];

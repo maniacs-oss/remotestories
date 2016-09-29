@@ -9,5 +9,5 @@ export type Comment = {
   id: number,
   body: string,
   story_id: number,
-  user_uuid: string,
+  user_id: number,
 };

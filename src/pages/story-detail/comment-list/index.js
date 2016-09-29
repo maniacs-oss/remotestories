@@ -40,6 +40,10 @@ function Comment({ comment }: { comment: CommentType }) {
 
   return (
     <div className="Comment" id={id}>
+      <div className="Comment-user">
+        #{comment.user_id} commented
+      </div>
+
       <div className="Comment-body">
         {comment.body}
       </div>
