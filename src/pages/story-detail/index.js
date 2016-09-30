@@ -1,6 +1,7 @@
 /* @flow */
 
 import './styles.css';
+import CommentForm from './comment-form';
 import CommentList from './comment-list';
 import React from 'react';
 import Story from 'src/shared/story';
@@ -19,8 +20,9 @@ export default function StoryDetail({ params: { id } }: Props) {
 
   return (
     <div className="StoryDetail">
-      <Story className="StoryDetail-Story" story={story} />
+      <Story className="StoryDetail-story" story={story} />
       <CommentList comments={comments} />
+      <CommentForm />
     </div>
   );
 }

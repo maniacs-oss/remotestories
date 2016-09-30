@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function CommentList({ comments }: Props) {
-  if (comments.length === 0) return <Box title="No comments yet" />;
+  if (comments.length === 0) return <Box className="CommentList-placeholder" title="No comments yet." />;
 
   return (
     <ol className="CommentList">

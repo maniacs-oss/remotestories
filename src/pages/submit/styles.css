@@ -10,45 +10,7 @@
 }
 
 .Submit-form-textarea {
-  background: #fff;
-  border-radius: 3px;
-  border: 1px solid #e9ebee;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 20px;
-  margin: 0 0 10px;
   min-height: 275px;
-  padding: 10px;
-  width: 100%;
-}
-
-.Submit-form-action {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 10px;
-}
-
-.Submit-form-tos {
-  color: #90949c;
-  font-size: 12px;
-  line-height: 14px;
-  margin: 0 10px 0 0;
-}
-
-.Submit-form-tos a {
-  color: #5c69ff;
-}
-
-.Submit-form-button {
-  background: #5c69ff;
-  border-radius: 3px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-  height: 35px;
-  padding: 0 35px;
-  text-transform: uppercase;
 }
 
 .Submit-tip {
