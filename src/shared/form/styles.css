@@ -1,0 +1,48 @@
+.Form-Label {
+  color: #90949c;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 10px;
+}
+
+.Form-Textarea {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #e9ebee;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  margin: 0 0 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.Form-SubmitButton {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+.Form-SubmitButton-text {
+  color: #90949c;
+  font-size: 12px;
+  line-height: 14px;
+  margin: 0 10px 0 0;
+}
+
+.Form-SubmitButton-text a {
+  color: #5c69ff;
+}
+
+.Form-SubmitButton-button {
+  background: #5c69ff;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  height: 35px;
+  padding: 0 35px;
+  text-transform: uppercase;
+}

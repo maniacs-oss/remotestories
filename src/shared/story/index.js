@@ -2,18 +2,20 @@
 
 import './styles.css';
 import React from 'react';
+import classNames from 'classnames';
 import type { Story as StoryType } from 'src/types';
 import { Link } from 'react-router';
 
 type Props = {
+  className?: string,
   story: StoryType,
 };
 
-export default function Story({ story }: Props) {
+export default function Story({ className, story }: Props) {
   const storyPath = `/stories/${ story.id }`;
 
   return (
-    <div className="Story">
+    <div className={classNames('Story', className)}>
       <div className="Story-body">
         {story.body}
       </div>

@@ -18,3 +18,18 @@ export const STORIES = [
     body: 'The guy who hired me left. Im the solo technical person who understand all aspects of my company’s platform. Requested shift to another role as i felt frustrated doing my current profile. Company outsources said role to India and tells me im too valuable to shift.',
   },
 ];
+
+export const COMMENTS = [
+  {
+    id: 1,
+    body: 'Man.. I am sorry you had to burn a persy day just to avoid the office..',
+    story_id: 1,
+    user_id: 1,
+  },
+  {
+    id: 2,
+    body: 'What?',
+    story_id: 1,
+    user_id: 2,
+  },
+];

@@ -2,6 +2,9 @@
 
 import './styles.css';
 import React from 'react';
+import Form, { Label, SubmitButton, Textarea } from 'src/shared/form';
+
+const TOS = <span>By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use</a>.</span>
 
 export default function Submit() {
   return (
@@ -10,19 +13,17 @@ export default function Submit() {
         Submit your Story. It’s anonymous.
       </h1>
 
-      <div className="Submit-box Submit-form">
-        <form>
-          <label>
-            <span className="Submit-form-label">Your story</span>
-            <textarea className="Submit-form-textarea" />
-          </label>
+      <Form className="Submit-form">
+        <Label htmlFor="body">
+          Your story
+        </Label>
 
-          <div className="Submit-form-action">
-            <p className="Submit-form-tos">By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use.</a></p>
-            <button className="Submit-form-button">post</button>
-          </div>
-        </form>
-      </div>
+        <Textarea className="Submit-form-textarea" id="body" />
+
+        <SubmitButton text={TOS}>
+          Post
+        </SubmitButton>
+      </Form>
 
       <h2 className="Submit-heading">
         Tips about posting your story
