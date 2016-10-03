@@ -5,35 +5,18 @@ Anonymous stories from remote workers.
 ## Installation
 
 ```sh
-$ npm install
+$ ./scripts/setup.sh
 ```
 
 ## Development
 
-```sh
-$ NODE_PATH=. npm start
-```
-
-Runs the app in development mode.
-Open http://localhost:3000 to view it in the browser.
-
-The page will reload if you make edits.
-You will see the build errors and lint warnings in the console.
+This project is split up into an api client and a web client. Each client has
+its own README with all necessary information to get up and running.
 
 ## Tests
 
 ```sh
-$ NODE_PATH=. npm test
-```
-
-Runs the test watcher in an interactive mode.
-By default, runs tests related to files changes since the last commit.
-
-Or you can run the unit tests and check for type errors individually:
-
-```sh
-$ NODE_PATH=. npm run test:unit
-$ npm run test:flow
+$ ./scripts/test.sh
 ```
 
 ## Contributing
