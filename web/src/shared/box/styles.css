@@ -1,0 +1,14 @@
+.Box {
+  background: #f6f7f9;
+  padding: 20px;
+}
+
+.Box-title {
+  color: #90949c;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.Box-title ~ :nth-child(2) {
+  margin-top: 10px;
+}

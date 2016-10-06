@@ -1,0 +1,25 @@
+.Submit-heading {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  margin: 0 0 30px;
+}
+
+.Submit-form {
+  margin: 0 0 60px;
+}
+
+.Submit-form-textarea {
+  min-height: 275px;
+}
+
+.Submit-tip {
+  color: #90949c;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 30px;
+}
+
+.Submit-tip:last-child {
+  margin: 0;
+}
