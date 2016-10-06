@@ -11,4 +11,4 @@ if ! git remote | grep web > /dev/null; then
   git remote add web "https://:$HEROKU_AUTH_TOKEN@git.heroku.com/remotestories.git"
 fi
 
-git subtree push --prefix web/ web master
+git subtree push --prefix web/ web master -q
