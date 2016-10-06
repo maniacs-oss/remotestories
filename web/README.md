@@ -1,6 +1,6 @@
-# Remote Stories [![Build Status](https://travis-ci.org/ayrton/remotestories.svg?branch=master)](https://travis-ci.org/ayrton/remotestories)
+# Remote Stories web client
 
-Anonymous stories from remote workers.
+This is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Installation
 
@@ -34,23 +34,4 @@ Or you can run the unit tests and check for type errors individually:
 ```sh
 $ NODE_PATH=. npm run test:unit
 $ npm run test:flow
-```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub. This project is intended to be a
-safe, welcoming space for collaboration, and contributors are expected to adhere
-to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
-
-## License
-
-```
- _________________
-< The MIT License >
- -----------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
 ```
