@@ -1,8 +1,0 @@
-[ignore]
-<PROJECT_ROOT>/node_modules/fbjs/.*
-
-[options]
-  module.name_mapper='^src\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
-
-[version]
-0.33.0
