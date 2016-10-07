@@ -1,6 +1,6 @@
 # Remote Stories api client
 
-This is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Ruby on Rails api client for [Remote Stories](https://www.remotestories.com).
 
 ## Installation
 

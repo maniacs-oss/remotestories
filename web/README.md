@@ -1,6 +1,6 @@
 # Remote Stories web client
 
-This is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+React web client for [Remote Stories](https://www.remotestories.com) - bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Installation
 
