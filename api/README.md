@@ -1,24 +1,21 @@
-# README
+# Remote Stories api client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```sh
+$ bundle install
+```
 
-* System dependencies
+## Development
 
-* Configuration
+```sh
+$ rails server
+```
 
-* Database creation
+## Tests
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```sh
+$ rake test
+```

@@ -13,12 +13,6 @@ $ ./scripts/setup.sh
 This project is split up into an api client and a web client. Each client has
 its own README with all necessary information to get up and running.
 
-## Tests
-
-```sh
-$ ./scripts/test.sh
-```
-
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub. This project is intended to be a
