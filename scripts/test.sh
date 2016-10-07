@@ -2,7 +2,7 @@
 set -ev
 
 cd api/
-# bin/rake test
+bin/rake test
 
 cd -
 

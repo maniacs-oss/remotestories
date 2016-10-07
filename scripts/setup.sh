@@ -1,8 +1,8 @@
 #!/bin/bash
-set -ev
+set -e
 
 cd api/
-# bundle install
+bundle install
 
 cd -
 

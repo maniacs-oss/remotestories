@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - '6.6'
+before_install:
+  - rvm use "$(cat api/.ruby-version)" --install --binary --fuzzy
 install:
   - ./scripts/setup.sh
 script:
