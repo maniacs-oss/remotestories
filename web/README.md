@@ -8,14 +8,20 @@ React web client for [Remote Stories](https://www.remotestories.com) - bootstrap
 $ npm install
 ```
 
+## Configuration
+
+```sh
+cp .env.example .env
+```
+
 ## Development
 
 ```sh
-$ NODE_PATH=. npm start
+$ npm start
 ```
 
 Runs the app in development mode.
-Open http://localhost:3000 to view it in the browser.
+Open http://localhost:4000 to view it in the browser.
 
 The page will reload if you make edits.
 You will see the build errors and lint warnings in the console.
@@ -23,7 +29,7 @@ You will see the build errors and lint warnings in the console.
 ## Tests
 
 ```sh
-$ NODE_PATH=. npm test
+$ npm test
 ```
 
 Runs the test watcher in an interactive mode.
@@ -32,6 +38,6 @@ By default, runs tests related to files changes since the last commit.
 Or you can run the unit tests and check for type errors individually:
 
 ```sh
-$ NODE_PATH=. npm run test:unit
+$ npm run test:unit
 $ npm run test:flow
 ```
