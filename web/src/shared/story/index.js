@@ -2,6 +2,7 @@
 
 import './styles.css';
 import React from 'react';
+import Time from 'src/shared/time';
 import classNames from 'classnames';
 import type { Story as StoryType } from 'src/types';
 import { Link } from 'react-router';
@@ -31,7 +32,7 @@ export default function Story({ className, story }: Props) {
         </div>
 
         <Link className="Story-meta-time" to={storyPath}>
-          <time>09.16.16 8:31am →</time>
+          <Time time={story.created_at} />
         </Link>
       </div>
     </div>

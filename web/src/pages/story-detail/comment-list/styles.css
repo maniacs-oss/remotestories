@@ -32,11 +32,11 @@
   text-align: right;
 }
 
-.Time {
+.Comment-time-link {
   color: #bec2c9;
   font-size: 11px;
 }
 
-.Time:hover {
+.Comment-time-link:hover {
   color: #4b4f56;
 }

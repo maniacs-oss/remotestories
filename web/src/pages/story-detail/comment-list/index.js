@@ -3,6 +3,7 @@
 import './styles.css';
 import Box from 'src/shared/box';
 import React from 'react';
+import Time from 'src/shared/time';
 import type { Comment as CommentType } from 'src/types';
 
 type Props = {
@@ -49,8 +50,8 @@ function Comment({ comment }: { comment: CommentType }) {
       </div>
 
       <div className="Comment-time">
-        <a className="Time" href={`#${ id }`}>
-          09.16.16 8:31am →
+        <a className="Comment-time-link" href={`#${ id }`}>
+          <Time time={comment.created_at} />
         </a>
       </div>
     </div>
