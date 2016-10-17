@@ -27,7 +27,7 @@ export default function Story({ className, story }: Props) {
           <a className="Story-meta-button" href="#"><span className="Story-meta-button-emoji">😰</span>&nbsp;{random(50)}</a>
 
           <Link className="Story-meta-button" to={storyPath}>
-            {random(15)}&nbsp;<span className="Story-meta-button-emoji">💬</span>
+            {story.comments_count}&nbsp;<span className="Story-meta-button-emoji">💬</span>
           </Link>
         </div>
 
