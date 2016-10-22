@@ -1,0 +1,21 @@
+.Pagination {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  justify-content: flex-end;
+  margin: 37px -13px 0;
+}
+
+.Pagination * {
+  margin: 0 10px;
+  padding: 3px; /* NOTE increase click area */
+}
+
+.Pagination a {
+  color: #90949c;
+  display: inline-flex; /* NOTE align image vertically */
+}
+
+.Pagination a.is-active {
+  color: #5c69ff;
+}
