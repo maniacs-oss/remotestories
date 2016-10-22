@@ -3,7 +3,7 @@
 export type Story = {
   id: number,
   body: string,
-  comments_count: number,
+  comment_ids: Array<number>,
   created_at: string,
 };
 

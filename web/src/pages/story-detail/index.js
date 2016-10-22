@@ -5,18 +5,16 @@ import CommentForm from './comment-form';
 import CommentList from './comment-list';
 import React from 'react';
 import Story from 'src/shared/story';
-import { COMMENTS, STORIES } from 'src/constants';
+import type { Comment, Story as StoryType } from 'src/types';
+import { connect } from 'react-redux';
 
 type Props = {
-  params: { id: string },
+  story: ?StoryType,
+  comments: Array<Comment>,
 };
 
-export default function StoryDetail({ params: { id } }: Props) {
-  const story = findStory(id);
-
+function StoryDetail({ story, comments }: Props) {
   if (!story) return null;
-
-  const comments = findComments(story.id);
 
   return (
     <div className="StoryDetail">
@@ -27,10 +25,17 @@ export default function StoryDetail({ params: { id } }: Props) {
   );
 }
 
-function findStory(id: string) {
-  return STORIES.find((story) => String(story.id) === id);
-}
+const mapStateToProps = (state, { params: { id } }) => {
+  const story = state.stories[id];
 
-function findComments(id: number) {
-  return COMMENTS.filter(({ story_id }) => story_id === id);
-}
+  const comments = story
+    ? story.comment_ids.map((commentId) => state.comments[String(commentId)])
+    : [];
+
+  return {
+    story,
+    comments,
+  };
+};
+
+export default connect(mapStateToProps)(StoryDetail);
