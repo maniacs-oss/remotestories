@@ -4,10 +4,8 @@ import type { Comment } from 'src/types';
 import { Map } from 'immutable';
 
 type State = Map<number, Comment>;
+type Action = Object;
 
-type Action = {
-  type?: any,
-};
 
 const COMMENTS = [
   {
@@ -28,11 +26,12 @@ const COMMENTS = [
 
 const INITIAL_STATE = COMMENTS.reduce(
   (state, comment) => state.set(comment.id, comment),
-  new Map()
+  new Map(),
 );
 
-export default function reducer(state: State = INITIAL_STATE, action: Action = {}) {
+export default function reducer(state: State = INITIAL_STATE, action: Action): State {
   switch (action.type) {
-    default: return state;
+    default:
+      return state;
   }
 }

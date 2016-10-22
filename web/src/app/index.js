@@ -11,16 +11,13 @@ import Submit from 'src/pages/submit';
 import illustration1 from './illustration-1.jpg';
 import illustration2 from './illustration-2.jpg';
 import logo from './logo.svg';
-import rootReducer from 'src/ducks';
+import store from 'src/store';
 import { BrowserRouter, Match, Link } from 'react-router'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-
-const STORE = createStore(rootReducer);
 
 export default function App() {
   return (
-    <Provider store={STORE}>
+    <Provider store={store}>
       <BrowserRouter>
         <Layout>
           <Match exactly pattern="/" component={Home} />
