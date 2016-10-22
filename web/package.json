@@ -15,7 +15,7 @@
     "fecha": "^2.3.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-router": "^4.0.0-alpha.4",
+    "react-router": "^4.0.0-alpha.5",
     "sanitize.css": "^4.1.0"
   },
   "scripts": {
