@@ -7,6 +7,7 @@ import React from 'react';
 import Story from 'src/shared/story';
 import type { Comment, Story as StoryType } from 'src/types';
 import { connect } from 'react-redux';
+import { pluck } from 'src/utils';
 
 type Props = {
   story: ?StoryType,
@@ -26,10 +27,10 @@ function StoryDetail({ story, comments }: Props) {
 }
 
 const mapStateToProps = (state, { params: { id } }) => {
-  const story = state.stories[id];
+  const story = state.stories.get(Number(id));
 
   const comments = story
-    ? story.comment_ids.map((commentId) => state.comments[String(commentId)])
+    ? pluck(state.comments, story.comment_ids)
     : [];
 
   return {

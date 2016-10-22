@@ -22,13 +22,9 @@ function StoryList({ stories }: Props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  const stories = Object.keys(state.stories)
-    .map(id => state.stories[id])
-    .reverse();
-
+const mapStateToProps = ({ stories }) => {
   return {
-    stories,
+    stories: stories.valueSeq(),
   };
 };
 
