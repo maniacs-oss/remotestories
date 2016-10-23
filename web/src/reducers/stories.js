@@ -2,6 +2,7 @@
 
 import type { Comment } from 'src/types';
 import type { Story } from 'src/types';
+import { CREATE as CREATE_COMMENT } from 'src/actions/comments';
 import { Map } from 'immutable';
 
 type State = Map<number, Story>;
@@ -41,7 +42,18 @@ const INITIAL_STATE = STORIES.reduce(
 
 export default function reducer(state: State = INITIAL_STATE, action: Action): State {
   switch (action.type) {
+    case CREATE_COMMENT:
+      return createCommentReducer(state, action);
     default:
       return state;
   }
+}
+
+function createCommentReducer(state: State, { comment }: { comment: Comment }): State {
+  const story = state.get(comment.story_id);
+
+  return state.set(story.id, {
+    ...story,
+    comment_ids: [...story.comment_ids, comment.id],
+  });
 }

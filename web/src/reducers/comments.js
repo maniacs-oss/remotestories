@@ -2,10 +2,10 @@
 
 import type { Comment } from 'src/types';
 import { Map } from 'immutable';
+import { CREATE } from 'src/actions/comments';
 
 type State = Map<number, Comment>;
 type Action = Object;
-
 
 const COMMENTS = [
   {
@@ -31,7 +31,13 @@ const INITIAL_STATE = COMMENTS.reduce(
 
 export default function reducer(state: State = INITIAL_STATE, action: Action): State {
   switch (action.type) {
+    case CREATE:
+      return createCommentReducer(state, action);
     default:
       return state;
   }
+}
+
+function createCommentReducer(state: State, { comment }: { comment: Comment }): State {
+  return state.set(comment.id, comment);
 }

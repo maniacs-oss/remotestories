@@ -21,7 +21,7 @@ function StoryDetail({ story, comments }: Props) {
     <div className="StoryDetail">
       <Story className="StoryDetail-story" story={story} />
       <CommentList comments={comments} />
-      <CommentForm />
+      <CommentForm story={story} />
     </div>
   );
 }

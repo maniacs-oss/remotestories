@@ -1,5 +1,8 @@
 /* @flow */
 
+import type { CREATE_COMMENT_ACTION } from 'src/actions/comments';
+import type { Dispatch as ReduxDispatch } from 'redux';
+
 export type Story = {
   id: number,
   body: string,
@@ -14,3 +17,9 @@ export type Comment = {
   user_id: number,
   created_at: string,
 };
+
+export type Action =
+  | CREATE_COMMENT_ACTION
+  ;
+
+export type Dispatch = ReduxDispatch<Action>;

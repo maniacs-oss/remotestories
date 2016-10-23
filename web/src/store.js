@@ -1,6 +1,6 @@
 /* @flow */
 
-import rootReducer from 'src/ducks';
+import rootReducer from 'src/reducers';
 import { createStore } from 'redux'
 
 export default createStore(
