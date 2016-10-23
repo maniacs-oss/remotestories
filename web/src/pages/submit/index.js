@@ -1,14 +1,15 @@
 /* @flow */
 
 import './styles.css';
-import React from 'react';
 import Form, { Label, SubmitButton, Textarea } from 'src/shared/form';
+import Layout from 'src/shared/layout';
+import React from 'react';
 
 const TOS = <span>By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use</a>.</span>
 
 export default function Submit() {
   return (
-    <div className="Submit">
+    <Layout className="Submit">
       <h1 className="Submit-heading">
         Submit your Story. It’s anonymous.
       </h1>
@@ -35,6 +36,6 @@ export default function Submit() {
       <p className="Submit-tip">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut massa in dolor pulvinar efficitur. Phasellus lacinia, quam et hendrerit elementum, metus sem convallis augue, ac euismod turpis sapien a arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
       </p>
-    </div>
+    </Layout>
   );
 }

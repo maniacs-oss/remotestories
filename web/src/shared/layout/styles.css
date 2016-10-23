@@ -1,81 +1,78 @@
-.App {
+.Layout {
   color: #4b4f56;
   position: relative;
 }
 
-.App-container {
-  overflow: auto; /* NOTE respect margin-bottom defined on .App-content in Safari. */
+.Layout-container {
+  overflow: auto; /* NOTE respect margin-bottom defined on .Layout-content in Safari. */
 }
 
-.App-content {
+.Layout-content {
   box-sizing: border-box;
   margin: 30px auto;
+  padding: 0 20px;
   width: 100%;
 }
 
-.App-navigation {
+.Layout-navigation {
   align-items: flex-start;
   border-bottom: 5px solid #f6f7f9;
   display: flex;
   margin: 0 0 30px;
 }
 
-.App-navigation-list {
+.Layout-navigation-list {
   height: inherit;
 }
 
-.App-navigation-list li {
+.Layout-navigation-list li {
   display: block;
   float: left;
   height: inherit;
   margin: 0 20px 0 0;
 }
 
-.App-navigation-list li:last-child {
+.Layout-navigation-list li:last-child {
   margin: 0;
 }
 
-.App-navigation-link,
-.App-navigation-link-active {
+.Layout-navigation-link,
+.Layout-navigation-link-active {
   display: block;
   font-size: 14px;
   height: inherit;
 }
 
-.App-navigation-link {
+.Layout-navigation-link {
   color: #90949c;
 }
 
-.App-navigation-link:hover,
-.App-navigation-link-active {
+.Layout-navigation-link:hover,
+.Layout-navigation-link-active {
   color: #4b4f56;
 }
 
 @media (max-width: 768px) {
-  .App-illustration {
+  .Layout-illustration {
     display: none;
   }
 
-  .App-content {
-    padding: 0 20px;
-  }
-
-  .App-navigation {
+  .Layout-navigation {
     align-items: center;
     flex-flow: column nowrap;
   }
 
-  .App-navigation-logo {
+  .Layout-navigation-logo {
     margin: 0 0 20px;
   }
 
-  .App-navigation-list {
+  .Layout-navigation-list {
     margin: 0 0 20px;
   }
 }
 
 @media (min-width: 769px) {
-  .App-illustration {
+  .Layout-illustration {
     align-items: center;
     background: #5c69ff;
     bottom: 0;
@@ -86,27 +83,26 @@
     width: 30%;
   }
 
-  .App-illustration-image {
+  .Layout-illustration-image {
     width: 90%;
   }
 
-  .App-container {
+  .Layout-container {
     margin: 0 0 0 auto;
     width: 70%;
   }
 
-  .App-content {
+  .Layout-content {
     max-width: 640px;
-    padding: 0 20px;
   }
 
-  .App-navigation {
+  .Layout-navigation {
     flex-flow: row nowrap;
     height: 50px;
     justify-content: space-between;
   }
 
-  .App-navigation-link-active {
+  .Layout-navigation-link-active {
     border-bottom: 5px solid #5c69ff;
   }
 }

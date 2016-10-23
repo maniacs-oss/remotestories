@@ -1,5 +1,6 @@
 /* @flow */
 
+import Layout from 'src/shared/layout';
 import Pagination from 'src/shared/pagination';
 import React from 'react';
 import StoryList from 'src/shared/story-list';
@@ -13,9 +14,9 @@ export default function Home({ location }: Props) {
   const page = pageParam(location);
 
   return (
-    <div>
+    <Layout>
       <StoryList />
       <Pagination page={page} totalPages={5} />
-    </div>
+    </Layout>
   );
 }

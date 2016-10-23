@@ -3,6 +3,7 @@
 import './styles.css';
 import CommentForm from './comment-form';
 import CommentList from './comment-list';
+import Layout from 'src/shared/layout';
 import React from 'react';
 import Story from 'src/shared/story';
 import type { Comment, Story as StoryType } from 'src/types';
@@ -18,11 +19,11 @@ function StoryDetail({ story, comments }: Props) {
   if (!story) return null;
 
   return (
-    <div className="StoryDetail">
+    <Layout className="StoryDetail">
       <Story className="StoryDetail-story" story={story} />
       <CommentList comments={comments} />
       <CommentForm story={story} />
-    </div>
+    </Layout>
   );
 }
 
