@@ -9,7 +9,9 @@ export type CREATE_COMMENT_ACTION = {
 
 export const CREATE = 'comments/CREATE';
 
-export function createComment({ comment: { body, story_id } }: { comment: { body: string, story_id: number } }): CREATE_COMMENT_ACTION {
+export function createComment({ comment: { body, story_id } }: { comment: { body: string, story_id: number } }): ?CREATE_COMMENT_ACTION {
+  if (body === '') return;
+
   const comment = {
     id: randomNumber(1000),
     body,
