@@ -50,16 +50,27 @@ export class Textarea extends React.Component {
   }
 }
 
-export function SubmitButton({ children, text }: { children?: any, text:? any }) {
-  return (
-    <div className="Form-SubmitButton">
-      <p className="Form-SubmitButton-text">
-        {text}
-      </p>
+export class SubmitButton extends React.Component {
+  props: {
+    children?: any,
+    text: ?any
+  };
 
-      <button className="Form-SubmitButton-button">
-        {children}
-      </button>
-    </div>
-  );
+  el: HTMLButtonElement;
+
+  render() {
+    const { children, text } = this.props;
+
+    return (
+      <div className="Form-SubmitButton">
+        <p className="Form-SubmitButton-text">
+          {text}
+        </p>
+
+        <button className="Form-SubmitButton-button" ref={el => this.el = el}>
+          {children}
+        </button>
+      </div>
+    );
+  }
 }

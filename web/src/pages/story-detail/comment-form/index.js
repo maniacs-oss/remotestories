@@ -19,6 +19,7 @@ class CommentForm extends React.Component {
   props: Props;
 
   textarea: Textarea;
+  submitButton: SubmitButton;
 
   render() {
     return (
@@ -32,7 +33,7 @@ class CommentForm extends React.Component {
           onKeyDown={this.submitOnCmdEnter}
           ref={textarea => this.textarea = textarea} />
 
-        <SubmitButton text={TOS}>
+        <SubmitButton text={TOS} ref={submitButton => this.submitButton = submitButton}>
           Post
         </SubmitButton>
       </Form>
@@ -49,7 +50,7 @@ class CommentForm extends React.Component {
     if (!(event.metaKey && event.key === 'Enter')) return;
 
     if (event.target instanceof window.HTMLTextAreaElement) {
-      this.createComment({ body: event.target.value.trim() });
+      this.submitButton.el.click();
     }
   };
 }

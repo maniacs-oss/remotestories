@@ -13,7 +13,7 @@ type Props = {
 export default class Form extends React.Component {
   props: Props;
 
-  form: HTMLFormElement;
+  el: HTMLFormElement;
 
   static defaultProps = {
     focus: false,
@@ -21,24 +21,24 @@ export default class Form extends React.Component {
 
   componentDidMount() {
     if (!this.props.focus) return;
-    focusFirstElement(this.form);
+    focusFirstElement(this.el);
   }
 
   render() {
     const { focus: _, onSubmit: __, ...formProps } = this.props;
 
     return (
-      <form {...formProps} onSubmit={this.handleSubmit} ref={form => this.form = form} />
+      <form {...formProps} onSubmit={this.handleSubmit} ref={el => this.el = el} />
     );
   }
 
   handleSubmit = (event: SyntheticEvent) => {
-    event.preventDefault();
-
     const { name, onSubmit } = this.props;
     if (!onSubmit) return;
 
-    const values = elementValues(this.form);
+    event.preventDefault();
+
+    const values = elementValues(this.el);
     const wrappedValues = name ? { [`${ name }`]: values } : values;
 
     onSubmit(wrappedValues);
