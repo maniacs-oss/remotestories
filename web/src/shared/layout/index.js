@@ -46,7 +46,7 @@ export default function Layout({ children }: Props) {
                 </Link>
               </li>
               <li>
-                <Link activeClassName="Layout-navigation-link-active" className="Layout-navigation-link" to="/submit">
+                <Link activeClassName="Layout-navigation-link-active" className="Layout-navigation-link" to="/stories/new">
                   Submit
                 </Link>
               </li>

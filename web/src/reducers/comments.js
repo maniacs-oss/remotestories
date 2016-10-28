@@ -1,11 +1,15 @@
 /* @flow */
 
+import type { CREATE_COMMENT_ACTION } from 'src/actions/comments';
 import type { Comment } from 'src/types';
 import { Map } from 'immutable';
 import { CREATE } from 'src/actions/comments';
 
 type State = Map<number, Comment>;
-type Action = Object;
+
+type Action =
+  | CREATE_COMMENT_ACTION
+  ;
 
 const COMMENTS = [
   {

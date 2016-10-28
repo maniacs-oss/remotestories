@@ -1,12 +1,19 @@
 /* @flow */
 
+import type { CREATE_COMMENT_ACTION } from 'src/actions/comments';
+import type { CREATE_STORY_ACTION } from 'src/actions/stories';
 import type { Comment } from 'src/types';
 import type { Story } from 'src/types';
 import { CREATE as CREATE_COMMENT } from 'src/actions/comments';
+import { CREATE } from 'src/actions/stories';
 import { Map } from 'immutable';
 
 type State = Map<number, Story>;
-type Action = Object;
+
+type Action =
+  | CREATE_COMMENT_ACTION
+  | CREATE_STORY_ACTION
+  ;
 
 const STORIES = [
   {
@@ -42,11 +49,17 @@ const INITIAL_STATE = STORIES.reduce(
 
 export default function reducer(state: State = INITIAL_STATE, action: Action): State {
   switch (action.type) {
+    case CREATE:
+      return createStoryReducer(state, action);
     case CREATE_COMMENT:
       return createCommentReducer(state, action);
     default:
       return state;
   }
+}
+
+function createStoryReducer(state: State, { story }: { story: Story }): State {
+  return state.set(story.id, story);
 }
 
 function createCommentReducer(state: State, { comment }: { comment: Comment }): State {

@@ -42,7 +42,7 @@ class CommentForm extends React.Component {
 
   createComment = ({ body }) => {
     const comment = { body, story_id: this.props.story.id };
-    this.props.createComment({ comment });
+    this.props.createComment(comment);
     this.textarea.el.value = '';
   };
 

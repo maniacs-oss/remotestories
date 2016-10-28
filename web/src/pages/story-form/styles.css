@@ -1,25 +1,25 @@
-.Submit-heading {
+.StoryForm-heading {
   font-size: 20px;
   font-weight: 300;
   line-height: 25px;
   margin: 0 0 30px;
 }
 
-.Submit-form {
+.StoryForm-form {
   margin: 0 0 50px;
 }
 
-.Submit-form-textarea {
+.StoryForm-textarea {
   min-height: 275px;
 }
 
-.Submit-tip {
+.StoryForm-tip {
   color: #90949c;
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 30px;
 }
 
-.Submit-tip:last-child {
+.StoryForm-tip:last-child {
   margin: 0;
 }

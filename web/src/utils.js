@@ -24,3 +24,12 @@ export function pluck<K, V>(iterable: Iterable<K, V>, keys: Array<K>): Array<V> 
 
   return results;
 }
+
+export function randomNumber(maximum: number): number {
+  return Math.ceil(Math.random() * (maximum - 1) + 1);
+}
+
+export function now(): string {
+  const date = new Date();
+  return date.toString();
+}

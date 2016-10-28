@@ -1,7 +1,9 @@
 /* @flow */
 
 import type { CREATE_COMMENT_ACTION } from 'src/actions/comments';
+import type { CREATE_STORY_ACTION } from 'src/actions/stories';
 import type { Dispatch as ReduxDispatch } from 'redux';
+import type { PUSH_HISTORY_ACTION, RECEIVE_HISTORY_ACTION } from 'src/actions/history';
 
 export type Story = {
   id: number,
@@ -20,6 +22,10 @@ export type Comment = {
 
 export type Action =
   | CREATE_COMMENT_ACTION
+  | CREATE_STORY_ACTION
+  | PUSH_HISTORY_ACTION
+  | RECEIVE_HISTORY_ACTION
   ;
 
-export type Dispatch = ReduxDispatch<Action>;
+type DispatchThunk = (dispatch: any, getState?: () => Object) => any;
+export type Dispatch = ReduxDispatch<Action> | DispatchThunk;
