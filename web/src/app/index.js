@@ -13,6 +13,8 @@ import store from 'src/store';
 import { BrowserRouter, Match, Miss, Redirect } from 'react-router'
 import { Provider } from 'react-redux'
 
+const redirectToHome = () => <Redirect to="/" />;
+
 export default function App() {
   return (
     <Provider store={store}>
@@ -24,7 +26,7 @@ export default function App() {
           <Match pattern="/about" component={About} />
           <Match pattern="/new" component={New} />
           <Match pattern="/popular" component={Popular} />
-          <Match exactly pattern="/stories" render={() => <Redirect to="/" />} />
+          <Match exactly pattern="/stories" render={redirectToHome} />
           <Match pattern="/stories/:id" component={StoryDetail} />
           <Match pattern="/stories/new" component={StoryForm} />
           <Miss component={NotFound}/>

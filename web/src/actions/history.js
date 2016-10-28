@@ -1,7 +1,5 @@
 /* @flow */
 
-import type { Dispatch } from 'src/types';
-
 export type RECEIVE_HISTORY_ACTION = {
   type: 'history/RECEIVE',
   history: any,
