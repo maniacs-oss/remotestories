@@ -1,8 +1,6 @@
 .Headline {
-  font-size: 40px;
   font-weight: 300;
   line-height: 50px;
-  margin: 0 0 10px;
 }
 
 .Paragraph {
@@ -24,4 +22,16 @@
 
 .Text a {
   color: #5c69ff;
+}
+
+@media (max-width: 768px) {
+  .Headline {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 769px) {
+  .Headline {
+    font-size: 40px;
+  }
 }

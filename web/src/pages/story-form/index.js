@@ -6,6 +6,7 @@ import Layout from 'src/shared/layout';
 import React from 'react';
 import type { Dispatch } from 'src/types';
 import { Link } from 'react-router';
+import { Text } from 'src/shared/typography';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createStory } from 'src/actions/stories';
@@ -18,9 +19,9 @@ class StoryForm extends React.Component {
   render() {
     return (
       <Layout className="StoryForm">
-        <h1 className="StoryForm-heading">
+        <Text component="h1" className="StoryForm-heading" variant="light">
           Submit your Story. It’s anonymous.
-        </h1>
+        </Text>
 
         <Form className="StoryForm-form" onSubmit={this.props.createStory}>
           <Label htmlFor="body">

@@ -6,6 +6,7 @@ import Time from 'src/shared/time';
 import classNames from 'classnames';
 import type { Story as StoryType } from 'src/types';
 import { Link } from 'react-router';
+import { Text } from 'src/shared/typography';
 
 type Props = {
   className?: string,
@@ -17,9 +18,9 @@ export default function Story({ className, story }: Props) {
 
   return (
     <div className={classNames('Story', className)}>
-      <div className="Story-body">
+      <Text component="div" variant="light" className="Story-body">
         {story.body}
-      </div>
+      </Text>
 
       <div className="Story-meta">
         <div>

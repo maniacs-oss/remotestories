@@ -2,9 +2,10 @@
 
 import './styles.css';
 import React from 'react';
-import { Link } from 'react-router';
-import logo from './assets/logo.svg';
 import illustration from './assets/illustration.jpg';
+import logo from './assets/logo.svg';
+import { Headline } from 'src/shared/typography';
+import { Link } from 'react-router';
 
 export default function NotFound() {
   return (
@@ -13,9 +14,9 @@ export default function NotFound() {
         <img src={logo} alt="Remote Stories" />
       </Link>
 
-      <p className="NotFound-text">
+      <Headline component="p" className="NotFound-headline">
         Oops, we can’t seem to find the page you are looking for…
-      </p>
+      </Headline>
 
       <Link className="NotFound-link" to="/">
         Go back to our homepage
