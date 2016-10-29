@@ -28,8 +28,8 @@ export default function App() {
           <Match pattern="/new" component={New} />
           <Match pattern="/popular" component={Popular} />
           <Match exactly pattern="/stories" render={redirectToHome} />
-          <Match pattern="/stories/:id" component={StoryDetail} />
           <Match pattern="/stories/new" component={StoryForm} />
+          <Match pattern="/stories/:id(\d+)" component={StoryDetail} />
           <Match pattern="/terms" component={Legal} />
           <Miss component={NotFound}/>
         </div>
