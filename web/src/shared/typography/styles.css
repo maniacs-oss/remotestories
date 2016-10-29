@@ -1,0 +1,27 @@
+.Headline {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 50px;
+  margin: 0 0 10px;
+}
+
+.Paragraph {
+  margin: 0 0 30px;
+}
+
+.Text {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.Text--regular {
+  font-weight: 400;
+}
+
+.Text--light {
+  font-weight: 300;
+}
+
+.Text a {
+  color: #5c69ff;
+}

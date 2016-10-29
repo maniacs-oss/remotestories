@@ -2,6 +2,7 @@
 
 import About from 'src/pages/about';
 import Home from 'src/pages/home';
+import Legal from 'src/pages/legal';
 import New from 'src/pages/new';
 import NotFound from 'src/pages/not-found';
 import Popular from 'src/pages/popular';
@@ -29,6 +30,7 @@ export default function App() {
           <Match exactly pattern="/stories" render={redirectToHome} />
           <Match pattern="/stories/:id" component={StoryDetail} />
           <Match pattern="/stories/new" component={StoryForm} />
+          <Match pattern="/terms" component={Legal} />
           <Miss component={NotFound}/>
         </div>
       </BrowserRouter>

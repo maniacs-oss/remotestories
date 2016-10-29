@@ -4,6 +4,7 @@ import './styles.css';
 import Form, { Label, SubmitButton, Textarea } from 'src/shared/form';
 import React from 'react';
 import type { Dispatch, Story } from 'src/types';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createComment } from 'src/actions/comments';
@@ -13,7 +14,7 @@ type Props = {
   story: Story,
 };
 
-const TOS = <span>By submitting your comment, you accept the <a href="#">terms&nbsp;of&nbsp;use</a>.</span>;
+const TOS = <span>By submitting your comment, you accept the <Link to="/terms">terms&nbsp;of&nbsp;use</Link>.</span>;
 
 class CommentForm extends React.Component {
   props: Props;

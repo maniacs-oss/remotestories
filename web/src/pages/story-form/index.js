@@ -5,11 +5,12 @@ import Form, { Label, SubmitButton, Textarea } from 'src/shared/form';
 import Layout from 'src/shared/layout';
 import React from 'react';
 import type { Dispatch } from 'src/types';
+import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createStory } from 'src/actions/stories';
 
-const TOS = <span>By submitting your story, you accept the <a href="#">terms&nbsp;of&nbsp;use</a>.</span>
+const TOS = <span>By submitting your story, you accept the <Link to="/terms">terms&nbsp;of&nbsp;use</Link>.</span>
 
 class StoryForm extends React.Component {
   submitButton: SubmitButton;
