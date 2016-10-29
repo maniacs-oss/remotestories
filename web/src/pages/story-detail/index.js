@@ -4,6 +4,7 @@ import './styles.css';
 import CommentForm from './comment-form';
 import CommentList from './comment-list';
 import Layout from 'src/shared/layout';
+import NotFound from 'src/pages/not-found';
 import React from 'react';
 import Story from 'src/shared/story';
 import type { Comment, Story as StoryType } from 'src/types';
@@ -16,7 +17,7 @@ type Props = {
 };
 
 function StoryDetail({ story, comments }: Props) {
-  if (!story) return null;
+  if (!story) return <NotFound />;
 
   return (
     <Layout className="StoryDetail">
