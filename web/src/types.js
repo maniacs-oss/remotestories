@@ -20,6 +20,12 @@ export type Comment = {
   created_at: string,
 };
 
+export type Reaction = {
+  id: number,
+  type: 'laugh' | 'cold_sweat',
+  user_id: number,
+};
+
 export type Action =
   | CREATE_COMMENT_ACTION
   | CREATE_STORY_ACTION

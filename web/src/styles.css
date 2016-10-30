@@ -25,3 +25,7 @@ ul {
 textarea {
   display: block; /* NOTE respect set margin without extra free goodies. */
 }
+
+button {
+  font-family: inherit;
+}

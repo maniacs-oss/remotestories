@@ -34,4 +34,8 @@
   .Headline {
     font-size: 40px;
   }
+
+  .Text a:hover {
+    text-decoration: underline;
+  }
 }
