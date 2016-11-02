@@ -5,12 +5,11 @@ import Form, { Label, SubmitButton, Textarea } from 'src/shared/form';
 import React from 'react';
 import type { Dispatch, Story } from 'src/types';
 import { Link } from 'react-router';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createComment } from 'src/actions/comments';
 
 type Props = {
-  createComment: typeof createComment,
+  dispatch: Dispatch,
   story: Story,
 };
 
@@ -40,8 +39,11 @@ class CommentForm extends React.Component {
   }
 
   createComment = ({ body }) => {
-    const comment = { body, story_id: this.props.story.id };
-    this.props.createComment(comment);
+    if (body) {
+      const comment = { body, story_id: this.props.story.id };
+      this.props.dispatch(createComment(comment));
+    }
+
     this.form.reset();
   };
 
@@ -54,17 +56,4 @@ class CommentForm extends React.Component {
   };
 }
 
-/**
- * NOTE passing an object to `bindActionCreators` messes with Flow:
- *
- * ```
- * const mapDispatchToProps = (dispatch: Dispatch) =>
- *   bindActionCreators({ createComment }, dispatch);
- * ```
- */
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  createComment: bindActionCreators(createComment, dispatch)
-});
-
-export default connect(null, mapDispatchToProps)(CommentForm);
+export default connect()(CommentForm);

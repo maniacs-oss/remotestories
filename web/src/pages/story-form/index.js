@@ -7,13 +7,18 @@ import React from 'react';
 import type { Dispatch } from 'src/types';
 import { Link } from 'react-router';
 import { Text } from 'src/shared/typography';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createStory } from 'src/actions/stories';
+
+type Props = {
+  dispatch: Dispatch,
+};
 
 const TOS = <span>By submitting your story, you accept the <Link to="/terms">terms&nbsp;of&nbsp;use</Link>.</span>
 
 class StoryForm extends React.Component {
+  props: Props;
+
   form: Form;
 
   render() {
@@ -23,7 +28,7 @@ class StoryForm extends React.Component {
           Submit your Story. It’s anonymous.
         </Text>
 
-        <Form className="StoryForm-form" onSubmit={this.props.createStory} ref={form => this.form = form}>
+        <Form className="StoryForm-form" onSubmit={this.createStory} ref={form => this.form = form}>
           <Label htmlFor="body">
             Your story
           </Label>
@@ -53,6 +58,14 @@ class StoryForm extends React.Component {
     );
   }
 
+  createStory = (story) => {
+    if (story.body) {
+      this.props.dispatch(createStory(story));
+    }
+
+    this.form.reset();
+  }
+
   submitOnCmdEnter = (event: SyntheticKeyboardEvent) => {
     if (!(event.metaKey && event.key === 'Enter')) return;
 
@@ -62,17 +75,4 @@ class StoryForm extends React.Component {
   };
 }
 
-/**
- * NOTE passing an object to `bindActionCreators` messes with Flow:
- *
- * ```
- * const mapDispatchToProps = (dispatch: Dispatch) =>
- *   bindActionCreators({ createStory }, dispatch);
- * ```
- */
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  createStory: bindActionCreators(createStory, dispatch)
-});
-
-export default connect(null, mapDispatchToProps)(StoryForm);
+export default connect()(StoryForm);

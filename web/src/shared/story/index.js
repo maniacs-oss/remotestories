@@ -4,78 +4,91 @@ import './styles.css';
 import React from 'react';
 import Time from 'src/shared/time';
 import classNames from 'classnames';
-import type { Reaction, Story as StoryType } from 'src/types';
+import type { Dispatch, Reaction, Story as StoryType } from 'src/types';
 import { Link } from 'react-router';
 import { Text } from 'src/shared/typography';
 import { connect } from 'react-redux';
-
-type Reactions = {
-  [key: string]: Array<Reaction>,
-};
+import { findReactions } from 'src/reducers/entities';
+import { toggleReaction } from 'src/actions/reactions';
 
 type Props = {
   className?: string,
+  dispatch: Dispatch,
   story: StoryType,
-  reactions: Reactions,
+  reactions: { [key: string]: Array<Reaction> },
 };
 
-const REACTION_TYPES = ['laugh', 'cold_sweat'];
+const REACTION_TYPES = [
+  { type: 'laugh', icon: '😄' },
+  { type: 'cold_sweat', icon: '😰' },
+];
 
-function Story({ className, reactions, story }: Props) {
-  const path = `/stories/${ story.id }`;
+class Story extends React.Component {
+  props: Props;
 
-  return (
-    <div className={classNames('Story', className)}>
-      <Text component="div" variant="light" className="Story-body">
-        {story.body}
-      </Text>
+  render() {
+    const { className, story } = this.props;
+    const path = `/stories/${ story.id }`;
 
-      <div className="Story-meta">
-        <div>
-          {REACTION_TYPES.map((type) =>
-            <ReactionsButton reactions={reactions[type] || []} key={type} type={type} />
-          )}
-          <CommentsButton story={story} />
+    return (
+      <div className={classNames('Story', className)}>
+        <Text component="div" variant="light" className="Story-body">
+          {story.body}
+        </Text>
+
+        <div className="Story-meta">
+          <div>
+            {REACTION_TYPES.map(
+              this.renderReactionButton
+            )}
+            {this.renderCommentsButton()}
+          </div>
+
+          <Link className="Story-meta-time" to={path}>
+            <Time time={story.created_at} />
+          </Link>
         </div>
-
-        <Link className="Story-meta-time" to={path}>
-          <Time time={story.created_at} />
-        </Link>
       </div>
-    </div>
+    );
+  }
+
+  renderReactionButton = ({ type, icon }) => {
+    const reactions = this.props.reactions[type] || [];
+
+    return (
+      <a className="Story-meta-button" onClick={this.toggleReaction(type)} key={type}>
+        <span className="Story-meta-button-icon">{icon}</span>
+        &nbsp;
+        {reactions.length}
+      </a>
+    );
+  }
+
+  renderCommentsButton() {
+    const { story } = this.props;
+    const path = `/stories/${ story.id }`;
+
+    return (
+      <Link className="Story-meta-button" to={path}>
+        {story.comment_ids.length}
+        &nbsp;
+        <span className="Story-meta-button-icon">💬</span>
+      </Link>
+    );
+  }
+
+  toggleReaction = (type) => (
+    (event: SyntheticEvent) => {
+      const { dispatch, story } = this.props;
+
+      event.preventDefault();
+      dispatch(toggleReaction({ story, type }));
+    }
   );
 }
 
-const REACTION_TYPE_EMOJI = {
-  'cold_sweat': '😰',
-  'laugh': '😄',
-};
-
-function ReactionsButton({ reactions, type }) {
-  const emoji = REACTION_TYPE_EMOJI[type];
-
-  return (
-    <a className="Story-meta-button">
-      <span className="Story-meta-button-emoji">{emoji}</span>&nbsp;{reactions.length}
-    </a>
-  );
-}
-
-function CommentsButton({ story }) {
-  const path = `/stories/${ story.id }`;
-
-  return (
-    <Link className="Story-meta-button" to={path}>
-      {story.comment_ids.length}&nbsp;<span className="Story-meta-button-emoji">💬</span>
-    </Link>
-  );
-}
-
-const mapStateToProps = (state, props) => {
-  const reactions = state.reactions
-    .filter(({ story_id }) => story_id === props.story.id)
-    .groupBy(({ type }) => type)
-    .toJS();
+const mapStateToProps = (state, { story }) => {
+  const reactions = findReactions(state.entities, story.reaction_ids);
 
   return {
     reactions,

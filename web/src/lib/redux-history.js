@@ -2,18 +2,23 @@
 
 import React from 'react';
 import type { Dispatch } from 'src/types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { receiveHistory } from 'src/actions/history';
 
+type Props = {
+  dispatch: Dispatch,
+};
+
 class ReduxHistory extends React.Component {
+  props: Props;
+
   static contextTypes = {
     history: React.PropTypes.object.isRequired
   }
 
   componentDidMount() {
     const { history } = this.context;
-    this.props.receiveHistory({ history });
+    this.props.dispatch(receiveHistory({ history }));
   }
 
   render() {
@@ -21,8 +26,4 @@ class ReduxHistory extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  receiveHistory: bindActionCreators(receiveHistory, dispatch)
-});
-
-export default connect(null, mapDispatchToProps)(ReduxHistory);
+export default connect()(ReduxHistory);

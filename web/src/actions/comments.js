@@ -1,25 +1,25 @@
 /* @flow */
 
-import type { Comment } from 'src/types';
+import type { ThunkAction } from 'src/types';
+import { createOrFetchUser } from 'src/actions/user';
 import { now, randomNumber } from 'src/utils';
-
-export type CREATE_COMMENT_ACTION = {
-  type: 'comments/CREATE',
-  comment: Comment,
-};
 
 export const CREATE = 'comments/CREATE';
 
-export function createComment({ body, story_id }: { body: string, story_id: number }): ?CREATE_COMMENT_ACTION {
-  if (body === '') return;
+export function createComment({ body, story_id }: { body: string, story_id: number }): ThunkAction {
+  return (dispatch, getState) => {
+    dispatch(createOrFetchUser());
 
-  const comment = {
-    id: randomNumber(1000),
-    body,
-    story_id,
-    user_id: 1337,
-    created_at: now(),
+    const { user } = getState();
+
+    const comment = {
+      id: randomNumber(1000),
+      body,
+      story_id,
+      user_id: user.id,
+      created_at: now(),
+    };
+
+    dispatch({ type: CREATE, comment, storyId: story_id });
   };
-
-  return { type: CREATE, comment };
 }

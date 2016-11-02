@@ -1,14 +1,14 @@
 /* @flow */
 
-import comments from './comments';
+import api from './api';
+import entities from './entities';
 import history from './history';
-import reactions from './reactions';
-import stories from './stories';
+import user from './user';
 import { combineReducers } from 'redux'
 
 export default combineReducers({
-  comments,
+  api,
+  entities,
   history,
-  reactions,
-  stories,
+  user,
 });

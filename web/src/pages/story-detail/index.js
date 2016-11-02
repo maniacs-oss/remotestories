@@ -7,32 +7,45 @@ import Layout from 'src/shared/layout';
 import NotFound from 'src/pages/not-found';
 import React from 'react';
 import Story from 'src/shared/story';
-import type { Comment, Story as StoryType } from 'src/types';
+import type { Comment, Dispatch, Story as StoryType } from 'src/types';
 import { connect } from 'react-redux';
-import { pluck } from 'src/utils';
+import { fetchStory } from 'src/actions/stories';
+import { findComments, findStory } from 'src/reducers/entities';
 
 type Props = {
-  story: ?StoryType,
   comments: Array<Comment>,
+  dispatch: Dispatch,
+  params: { id: string },
+  story: ?StoryType,
 };
 
-function StoryDetail({ story, comments }: Props) {
-  if (!story) return <NotFound />;
+class StoryDetail extends React.Component {
+  props: Props;
 
-  return (
-    <Layout className="StoryDetail">
-      <Story className="StoryDetail-story" story={story} />
-      <CommentList comments={comments} />
-      <CommentForm story={story} />
-    </Layout>
-  );
+  componentDidMount() {
+    const id = Number(this.props.params.id);
+    this.props.dispatch(fetchStory({ id }));
+  }
+
+  render() {
+    const { comments, story } = this.props;
+
+    if (!story) return <NotFound />;
+
+    return (
+      <Layout className="StoryDetail">
+        <Story className="StoryDetail-story" story={story} />
+        <CommentList comments={comments} />
+        <CommentForm story={story} />
+      </Layout>
+    );
+  }
 }
 
 const mapStateToProps = (state, { params: { id } }) => {
-  const story = state.stories.get(Number(id));
-
+  const story = findStory(state.entities, id);
   const comments = story
-    ? pluck(state.comments, story.comment_ids)
+    ? findComments(state.entities, story.comment_ids)
     : [];
 
   return {

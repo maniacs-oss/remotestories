@@ -1,11 +1,9 @@
 /* @flow */
 
 import About from 'src/pages/about';
-import Home from 'src/pages/home';
+import StoryList from 'src/pages/story-list';
 import Legal from 'src/pages/legal';
-import New from 'src/pages/new';
 import NotFound from 'src/pages/not-found';
-import Popular from 'src/pages/popular';
 import React from 'react';
 import ReduxHistory from 'src/lib/redux-history';
 import StoryDetail from 'src/pages/story-detail';
@@ -23,10 +21,10 @@ export default function App() {
         <div>
           <ReduxHistory />
 
-          <Match exactly pattern="/" component={Home} />
+          <Match exactly pattern="/" component={StoryList} />
           <Match pattern="/about" component={About} />
-          <Match pattern="/new" component={New} />
-          <Match pattern="/popular" component={Popular} />
+          <Match pattern="/new" component={StoryList} />
+          <Match pattern="/popular" component={StoryList} />
           <Match exactly pattern="/stories" render={redirectToHome} />
           <Match pattern="/stories/new" component={StoryForm} />
           <Match pattern="/stories/:id(\d+)" component={StoryDetail} />

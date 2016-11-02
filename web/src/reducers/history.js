@@ -1,18 +1,11 @@
 /* @flow */
 
-import type { PUSH_HISTORY_ACTION, RECEIVE_HISTORY_ACTION } from 'src/actions/history';
+import type { Action } from 'src/types';
 import { PUSH, RECEIVE } from 'src/actions/history';
 
-type State = any;
+export type State = any;
 
-type Action =
-  | PUSH_HISTORY_ACTION
-  | RECEIVE_HISTORY_ACTION
-  ;
-
-const INITIAL_STATE = null;
-
-export default function reducer(state: State = INITIAL_STATE, action: Action): State {
+export default function reducer(state: State = null, action: Action): State {
   switch (action.type) {
     case RECEIVE:
       return action.history;
