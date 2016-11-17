@@ -19,22 +19,20 @@ const TOS = <span>By submitting your comment, you accept the <Link to="/terms">t
 class CommentForm extends React.Component {
   props: Props;
 
-  textarea: Textarea;
-  submitButton: SubmitButton;
+  form: Form;
 
   render() {
     return (
-      <Form onSubmit={this.createComment}>
+      <Form onSubmit={this.createComment} ref={form => this.form = form}>
         <Label htmlFor="body">Post your comment</Label>
 
         <Textarea
           id="body"
           name="body"
           className="CommentForm-textarea"
-          onKeyDown={this.submitOnCmdEnter}
-          ref={textarea => this.textarea = textarea} />
+          onKeyDown={this.submitOnCmdEnter} />
 
-        <SubmitButton text={TOS} ref={submitButton => this.submitButton = submitButton}>
+        <SubmitButton text={TOS}>
           Post
         </SubmitButton>
       </Form>
@@ -44,14 +42,14 @@ class CommentForm extends React.Component {
   createComment = ({ body }) => {
     const comment = { body, story_id: this.props.story.id };
     this.props.createComment(comment);
-    this.textarea.el.value = '';
+    this.form.reset();
   };
 
   submitOnCmdEnter = (event: SyntheticKeyboardEvent) => {
     if (!(event.metaKey && event.key === 'Enter')) return;
 
     if (event.target instanceof window.HTMLTextAreaElement) {
-      this.submitButton.el.click();
+      this.form.submit();
     }
   };
 }

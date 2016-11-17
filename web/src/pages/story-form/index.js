@@ -14,7 +14,7 @@ import { createStory } from 'src/actions/stories';
 const TOS = <span>By submitting your story, you accept the <Link to="/terms">terms&nbsp;of&nbsp;use</Link>.</span>
 
 class StoryForm extends React.Component {
-  submitButton: SubmitButton;
+  form: Form;
 
   render() {
     return (
@@ -23,7 +23,7 @@ class StoryForm extends React.Component {
           Submit your Story. It’s anonymous.
         </Text>
 
-        <Form className="StoryForm-form" onSubmit={this.props.createStory}>
+        <Form className="StoryForm-form" onSubmit={this.props.createStory} ref={form => this.form = form}>
           <Label htmlFor="body">
             Your story
           </Label>
@@ -34,7 +34,7 @@ class StoryForm extends React.Component {
             className="StoryForm-textarea"
             onKeyDown={this.submitOnCmdEnter} />
 
-          <SubmitButton text={TOS} ref={submitButton => this.submitButton = submitButton}>
+          <SubmitButton text={TOS}>
             Post
           </SubmitButton>
         </Form>
@@ -57,7 +57,7 @@ class StoryForm extends React.Component {
     if (!(event.metaKey && event.key === 'Enter')) return;
 
     if (event.target instanceof window.HTMLTextAreaElement) {
-      this.submitButton.el.click();
+      this.form.submit();
     }
   };
 }

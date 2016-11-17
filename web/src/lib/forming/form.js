@@ -14,6 +14,7 @@ export default class Form extends React.Component {
   props: Props;
 
   el: HTMLFormElement;
+  submitButton: HTMLButtonElement;
 
   static defaultProps = {
     focus: false,
@@ -24,11 +25,25 @@ export default class Form extends React.Component {
     focusFirstElement(this.el);
   }
 
+  submit() {
+    this.submitButton.click();
+  }
+
+  reset() {
+    this.el.reset();
+  }
+
   render() {
-    const { focus: _, onSubmit: __, ...formProps } = this.props;
+    const { children, focus: _, onSubmit: __, ...formProps } = this.props;
 
     return (
-      <form {...formProps} onSubmit={this.handleSubmit} ref={el => this.el = el} />
+      <form {...formProps} onSubmit={this.handleSubmit} ref={el => this.el = el}>
+        {children}
+
+        <button
+          style={{ display: 'none' }}
+          ref={button => this.submitButton = button} />
+      </form>
     );
   }
 

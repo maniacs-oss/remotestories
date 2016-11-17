@@ -7,16 +7,26 @@ import React from 'react';
 import classNames from 'classnames';
 
 export default class Form extends React.Component {
+  el: Forming.Form;
+
   props : {
     children?: any,
     className?: string,
   };
 
+  submit() {
+    this.el.submit()
+  }
+
+  reset() {
+    this.el.reset()
+  }
+
   render() {
     const { children, className, ...otherProps } = this.props;
 
     return (
-      <Forming.Form className={classNames('Form', className)} {...otherProps}>
+      <Forming.Form className={classNames('Form', className)} {...otherProps} ref={el => this.el = el}>
         <Box>
           {children}
         </Box>
