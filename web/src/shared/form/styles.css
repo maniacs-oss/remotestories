@@ -40,9 +40,16 @@
   background: #5c69ff;
   border-radius: 3px;
   color: #fff;
-  cursor: pointer;
   font-size: 14px;
   height: 35px;
   padding: 0 35px;
   text-transform: uppercase;
+}
+
+[disabled] .Form-SubmitButton-button {
+  background: #90949c;
+}
+
+[disabled] .Form-SubmitButton-button:after {
+  content: '…';
 }
