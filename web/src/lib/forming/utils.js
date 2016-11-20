@@ -1,9 +1,10 @@
 /* @flow */
 
 export function focusFirstElement(form: HTMLFormElement): void {
-  const element = form.elements[0];
-  if (!element) return;
+  const elements: Array<HTMLElement> = Array.from(form.elements);
+  const element = elements.find(({ tagName }) => tagName !== 'FIELDSET');
 
+  if (!element) return;
   element.focus();
 }
 

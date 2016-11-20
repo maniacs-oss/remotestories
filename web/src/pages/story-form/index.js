@@ -28,7 +28,7 @@ class StoryForm extends React.Component {
           Submit your Story. It’s anonymous.
         </Text>
 
-        <Form className="StoryForm-form" onSubmit={this.createStory} ref={form => this.form = form}>
+        <Form className="StoryForm-form" focus={true} onSubmit={this.createStory} ref={form => this.form = form}>
           <Label htmlFor="body">
             Your story
           </Label>
