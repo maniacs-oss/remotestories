@@ -78,10 +78,8 @@ class Story extends React.Component {
   }
 
   toggleReaction = (type) => (
-    (event: SyntheticEvent) => {
+    () => {
       const { dispatch, story } = this.props;
-
-      event.preventDefault();
       dispatch(toggleReaction({ story, type }));
     }
   );
