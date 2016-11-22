@@ -12,7 +12,7 @@ const EMAIL = <a href="mailto:remotestories@ayrton.be">remotestories@ayrton.be</
 export default function Legal() {
   return (
     <Layout className="Legal">
-      <Headline className="Legal-headline" component="h1">Terms of Use</Headline>
+      <Headline component="h1" className="Legal-headline">Terms of Use</Headline>
 
       <Text component="div" variant="light" className="Legal-terms">
         <Paragraph>
@@ -91,7 +91,7 @@ export default function Legal() {
         </Paragraph>
       </Text>
 
-      <Headline className="Legal-headline" component="h2">Privacy Policy</Headline>
+      <Headline component="h2" className="Legal-headline">Privacy Policy</Headline>
 
       <Text component="div" variant="light">
         <Paragraph>
