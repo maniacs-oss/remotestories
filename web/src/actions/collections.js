@@ -2,7 +2,7 @@
 
 import type { ThunkAction } from 'src/types';
 import { REACTIONS, STORIES } from 'src/constants';
-import { findCollection } from 'src/reducers/api/collections';
+import { findCollectionApi } from 'src/selectors';
 
 export const FETCH = 'collections/FETCH';
 export const RECEIVE = 'collections/RECEIVE';
@@ -29,7 +29,7 @@ const PAGED_COLLECTIONS = {
 
 export function fetchCollection({ name, page }: { name: string, page: number }): ThunkAction {
   return (dispatch, getState) => {
-    const collectionApi = findCollection(getState().api.collections, name);
+    const collectionApi = findCollectionApi(getState(), name);
     if (collectionApi.isFetching || collectionApi.page === page) return;
 
     dispatch({ type: FETCH, name, page });

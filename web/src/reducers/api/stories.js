@@ -4,12 +4,12 @@ import type { Action } from 'src/types';
 import { FETCH, RECEIVE } from 'src/actions/stories';
 import { Map, Record } from 'immutable';
 
-export const StoryState = Record({
+export const StoryApiState = Record({
   isFetched: false,
   isFetching: false,
 });
 
-export type State = Map<number, StoryState>;
+export type State = Map<number, StoryApiState>;
 
 export default function reducer(state: State = new Map(), action: Action) {
   switch (action.type) {
@@ -24,7 +24,7 @@ export default function reducer(state: State = new Map(), action: Action) {
   }
 }
 
-function storyReducer(state: StoryState = new StoryState(), action: Action) {
+function storyReducer(state: StoryApiState = new StoryApiState(), action: Action) {
   switch (action.type) {
     case FETCH:
       return state
@@ -38,8 +38,4 @@ function storyReducer(state: StoryState = new StoryState(), action: Action) {
     default:
       return state;
   }
-}
-
-export function findStory(state: State, id: number) {
-  return state.get(id) || new StoryState();
 }

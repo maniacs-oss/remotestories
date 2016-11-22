@@ -68,30 +68,3 @@ export default function reducer(state: State = new State(), action: Action): Sta
 function toMap(entities) {
   return new Map(entities.map((entity) => [entity.id, entity]));
 }
-
-export function findComments(state: State, ids: Array<number>) {
-  return state
-    .get('comments')
-    .filter(({ id }) => ids.includes(id))
-    .toArray();
-}
-
-export function findStory(state: State, id: number | string) {
-  return state.getIn(['stories', Number(id)])
-}
-
-export function findStories(state: State, ids: Array<number>) {
-  return state
-    .get('stories')
-    .filter(({ id }) => ids.includes(id))
-    .toArray();
-}
-
-export function findReactions(state: State, ids: Array<number>) {
-  return state
-    .get('reactions')
-    .filter(({ id }) => ids.includes(id))
-    .valueSeq()
-    .groupBy(({ type }) => type)
-    .toJS()
-}

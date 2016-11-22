@@ -8,8 +8,8 @@ import Story from 'src/shared/story'
 import type { Dispatch, Location, Story as StoryType } from 'src/types';
 import { connect } from 'react-redux';
 import { fetchCollection } from 'src/actions/collections';
-import { findCollection } from 'src/reducers/api/collections';
-import { findStories } from 'src/reducers/entities';
+import { findCollectionApi } from 'src/selectors';
+import { findStories } from 'src/selectors';
 import { pageParam } from 'src/utils';
 
 type Props = {
@@ -59,8 +59,8 @@ class StoryList extends React.Component {
 }
 
 const mapStateToProps = (state, { pattern }) => {
-  const { isFetching, page, totalPages, storyIds } = findCollection(state.api.collections, pattern);
-  const stories = findStories(state.entities, storyIds);
+  const { isFetching, page, totalPages, storyIds } = findCollectionApi(state, pattern);
+  const stories = findStories(state, storyIds);
 
   return {
     isFetching,

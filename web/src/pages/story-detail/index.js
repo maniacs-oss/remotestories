@@ -10,7 +10,7 @@ import Story from 'src/shared/story';
 import type { Comment, Dispatch, Story as StoryType } from 'src/types';
 import { connect } from 'react-redux';
 import { fetchStory } from 'src/actions/stories';
-import { findComments, findStory } from 'src/reducers/entities';
+import { findComments, findStory } from 'src/selectors';
 
 type Props = {
   comments: Array<Comment>,
@@ -43,9 +43,9 @@ class StoryDetail extends React.Component {
 }
 
 const mapStateToProps = (state, { params: { id } }) => {
-  const story = findStory(state.entities, id);
+  const story = findStory(state, id);
   const comments = story
-    ? findComments(state.entities, story.comment_ids)
+    ? findComments(state, story.comment_ids)
     : [];
 
   return {

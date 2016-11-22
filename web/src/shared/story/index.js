@@ -8,7 +8,7 @@ import type { Dispatch, Reaction, Story as StoryType } from 'src/types';
 import { Link } from 'react-router';
 import { Text } from 'src/shared/typography';
 import { connect } from 'react-redux';
-import { findReactions } from 'src/reducers/entities';
+import { findReactions } from 'src/selectors';
 import { toggleReaction } from 'src/actions/reactions';
 
 type Props = {
@@ -86,7 +86,7 @@ class Story extends React.Component {
 }
 
 const mapStateToProps = (state, { story }) => {
-  const reactions = findReactions(state.entities, story.reaction_ids);
+  const reactions = findReactions(state, story.reaction_ids);
 
   return {
     reactions,

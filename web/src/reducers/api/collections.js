@@ -5,14 +5,14 @@ import { CREATE as CREATE_STORY } from 'src/actions/stories';
 import { FETCH, RECEIVE } from 'src/actions/collections';
 import { Map, Record } from 'immutable';
 
-const CollectionState = Record({
+export const CollectionApiState = Record({
   page: 0,
   totalPages: 0,
   isFetching: false,
   storyIds: [],
 })
 
-export type State = Map<string, CollectionState>;
+export type State = Map<string, CollectionApiState>;
 
 export default function reducer(state: State = new Map(), action: Action) {
   switch (action.type) {
@@ -32,7 +32,7 @@ export default function reducer(state: State = new Map(), action: Action) {
   }
 }
 
-function collectionReducer(state: CollectionState = new CollectionState(), action: Action) {
+function collectionReducer(state: CollectionApiState = new CollectionApiState(), action: Action) {
   switch (action.type) {
     case CREATE_STORY:
       return state
@@ -53,8 +53,4 @@ function collectionReducer(state: CollectionState = new CollectionState(), actio
     default:
       return state;
   }
-}
-
-export function findCollection(state: State, name: string) {
-  return state.get(name) || new CollectionState();
 }

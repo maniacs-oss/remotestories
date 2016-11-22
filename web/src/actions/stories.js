@@ -3,7 +3,7 @@
 import type { ThunkAction } from 'src/types';
 import { COMMENTS, REACTIONS, STORIES } from 'src/constants';
 import { createOrFetchUser } from 'src/actions/user';
-import { findStory } from 'src/reducers/api/stories';
+import { findStoryApi } from 'src/selectors';
 import { now, randomNumber } from 'src/utils';
 import { pushHistory } from './history';
 
@@ -47,7 +47,7 @@ export function createStory({ body }: { body: string }): ThunkAction {
 
 export function fetchStory({ id }: { id: number }): ThunkAction {
   return (dispatch, getState) => {
-    const storyApi = findStory(getState().api.stories, id);
+    const storyApi = findStoryApi(getState(), id);
     if (storyApi.isFetching || storyApi.isFetched) return;
 
     dispatch({ type: FETCH, id });
