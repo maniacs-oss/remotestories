@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20161008091404) do
   enable_extension "plpgsql"
 
   create_table "stories", force: :cascade do |t|
-    t.text     "body"
+    t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

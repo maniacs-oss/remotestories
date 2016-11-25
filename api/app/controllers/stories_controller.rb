@@ -1,17 +1,22 @@
 class StoriesController < ApplicationController
   def index
-    stories = Story.all.by_date
-    render_json stories: stories
+    api = Api::Stories.find params.slice(:filter), params[:page]
+    render_json api
   end
 
   def show
-    story = find_story
-    render_json story: story, comments: []
+    api = Api::Story.find params[:id]
+    render_json api
+  end
+
+  def create
+    story = Story.create! story_params
+    render_json story
   end
 
   private
 
-  def find_story
-    Story.find params[:id]
+  def story_params
+    params.require(:story).permit(:body)
   end
 end

@@ -3,6 +3,7 @@ set -e
 
 cd api/
 bundle install
+rake db:setup
 
 cd -
 
