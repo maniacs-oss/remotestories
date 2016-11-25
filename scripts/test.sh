@@ -2,6 +2,7 @@
 set -ev
 
 cd api/
+rubocop
 rake test
 
 cd -

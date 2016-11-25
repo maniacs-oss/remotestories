@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class StoriesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test 'should get index' do
     get stories_path
 
     assert_response :success
@@ -12,7 +12,7 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
     assert json_story_ids, stories_by_data_ids
   end
 
-  test "should get post" do
+  test 'should get post' do
     story = stories(:one)
     get story_path story
 

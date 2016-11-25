@@ -1,0 +1,21 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+
+# Disables "Use nested module/class definitions instead of compact style" warning
+ClassAndModuleChildren:
+  Enabled: false
+
+# Disables "Missing top-level class documentation comment" warning
+Documentation:
+  Enabled: false
+
+# Increases "Line is too long" warning from 80 to 180
+Metrics/LineLength:
+  Max: 120
+
+# Enforce trailing commas - but only for multilines
+Style/TrailingComma:
+  EnforcedStyleForMultiline: comma
