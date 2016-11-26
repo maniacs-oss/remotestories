@@ -22,7 +22,7 @@ export default function About() {
 
         <Paragraph component="ul">
           <li>😄 Agree/Haha me too</li>
-          <li>😰 Shit that is scary/’m worried about this too</li>
+          <li>😰 Shit that is scary/I’m worried about this too</li>
         </Paragraph>
 
         <Paragraph>
