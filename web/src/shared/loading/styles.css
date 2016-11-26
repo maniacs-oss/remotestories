@@ -2,7 +2,7 @@
   background: #f6f7f9;
   height: 98px;
   overflow: hidden;
-  position: relative
+  position: relative;
 }
 
 .Loading-skeleton + .Loading-skeleton {
@@ -17,11 +17,11 @@
   animation-timing-function: linear;
   background-image: linear-gradient(to right, #f6f7f9 0%, #e9ebee 20%, #f6f7f9 40%, #f6f7f9 100%);
   background-repeat: no-repeat;
-  background-size: 600px 104px;
+  background-size: 600px 98px;
   content: ' ';
   display: block;
   height: 100%;
-  position: relative
+  position: relative;
 }
 
 .Loading-skeleton div {
@@ -29,7 +29,7 @@
   height: 16px;
   left: 0;
   position: absolute;
-  right: 0
+  right: 0;
 }
 
 .Loading-skeleton .Loading-skeleton-1 {
@@ -82,10 +82,10 @@
 
 @keyframes shimmer {
   0% {
-    transform:translateX(-468px);
+    transform: translateX(-300px);
   }
 
-  100%{
-    transform:translateX(468px);
+  100% {
+    transform: translateX(300px);
   }
 }
