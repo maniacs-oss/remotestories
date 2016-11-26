@@ -8,8 +8,8 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
     assert_not_empty json_response['stories']
 
     json_story_ids = json_response['stories'].map { |story| story['id'] }
-    stories_by_data_ids = [stories(:two), stories(:one)].map(&:id)
-    assert json_story_ids, stories_by_data_ids
+    story_ids = [stories(:one), stories(:two)].map(&:id)
+    assert_equal json_story_ids, story_ids
   end
 
   test 'should get show' do
@@ -17,8 +17,11 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
     get story_path story
 
     assert_response :success
-    assert json_response['story']['id'], story.id
-    assert_instance_of Array, json_response['comments']
+    assert_equal json_response['story']['id'], story.id
+
+    json_comment_ids = json_response['comments'].map { |comment| comment['id'] }
+    comment_ids = [comments(:one)].map(&:id)
+    assert_equal json_comment_ids, comment_ids
   end
 
   test 'should post create' do
@@ -29,7 +32,7 @@ class StoriesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :success
-    assert json_response['body'], body
+    assert_equal json_response['body'], body
     assert json_response['id']
   end
 end

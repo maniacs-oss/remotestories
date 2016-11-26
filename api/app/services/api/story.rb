@@ -5,7 +5,7 @@ class Api::Story
 
   class << self
     def find(id)
-      story = Story.find id
+      story = Story.with_preloads.find id
       new story
     end
   end
@@ -15,7 +15,9 @@ class Api::Story
   end
 
   def comments
-    []
+    story
+      .comments
+      .by_date
   end
 
   def reactions
