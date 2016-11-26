@@ -2,8 +2,8 @@
 
 import './styles.css';
 import React from 'react';
-import next from './next.svg';
-import previous from './previous.svg';
+import next from './assets/next.svg';
+import previous from './assets/previous.svg';
 import { Link } from 'react-router';
 import { pageParam } from 'src/utils';
 
