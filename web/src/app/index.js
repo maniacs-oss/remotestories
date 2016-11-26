@@ -23,8 +23,7 @@ export default function App() {
 
           <Match exactly pattern="/" component={StoryList} />
           <Match pattern="/about" component={About} />
-          <Match pattern="/new" component={StoryList} />
-          <Match pattern="/popular" component={StoryList} />
+          <Match pattern="/newest" component={StoryList} />
           <Match exactly pattern="/stories" render={redirectToHome} />
           <Match pattern="/stories/new" component={StoryForm} />
           <Match pattern="/stories/:id(\d+)" component={StoryDetail} />

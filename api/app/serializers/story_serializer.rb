@@ -4,5 +4,10 @@ class StorySerializer < ActiveModel::Serializer
     :comment_ids,
     :created_at,
     :id,
+    :reaction_ids,
   )
+
+  def reaction_ids
+    []
+  end
 end

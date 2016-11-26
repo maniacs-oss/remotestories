@@ -10,8 +10,3 @@ export function pageParam(location: Location): number {
 export function randomNumber(maximum: number): number {
   return Math.ceil(Math.random() * (maximum - 1) + 1);
 }
-
-export function now(): string {
-  const date = new Date();
-  return date.toString();
-}

@@ -15,7 +15,7 @@ type Props = {
 const INNER_WINDOW_COUNT = 3;
 
 export default function Pagination({ page, totalPages }: Props) {
-  if (totalPages === 1) return null;
+  if (totalPages < 2) return null;
 
   const innerWindowCount = totalPages - page - INNER_WINDOW_COUNT === 1 ? INNER_WINDOW_COUNT + 1: INNER_WINDOW_COUNT;
   const previousPage = page > 1 ? page - 1 : null;

@@ -44,6 +44,7 @@ class StoryDetail extends React.Component {
 
 const mapStateToProps = (state, { params: { id } }) => {
   const story = findStory(state, id);
+
   const comments = story
     ? findComments(state, story.comment_ids)
     : [];

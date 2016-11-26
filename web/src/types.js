@@ -43,5 +43,5 @@ export type State = {
 
 type GetState = () => State;
 export type Action = Object;
-export type ThunkAction = (dispatch: (Action) => any, getState: GetState) => any;
+export type ThunkAction = (dispatch: (Action) => any, getState: GetState, api: Object) => any;
 export type Dispatch = (Action | ThunkAction) => any;

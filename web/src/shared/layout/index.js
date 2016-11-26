@@ -36,13 +36,8 @@ export default function Layout({ children }: Props) {
                 </Link>
               </li>
               <li>
-                <Link activeClassName="Layout-navigation-link-active" className="Layout-navigation-link" to="/new">
-                  New
-                </Link>
-              </li>
-              <li>
-                <Link activeClassName="Layout-navigation-link-active" className="Layout-navigation-link" to="/popular">
-                  Popular
+                <Link activeClassName="Layout-navigation-link-active" className="Layout-navigation-link" to="/newest">
+                  Newest
                 </Link>
               </li>
               <li>
