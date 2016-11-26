@@ -9,8 +9,8 @@ export function findCollectionApi(state: State, name: string) {
   return collection|| new CollectionApiState();
 }
 
-export function findStoryApi(state: State, id: number) {
-  const story = state.api.stories.get(id);
+export function findStoryApi(state: State, id: number | string) {
+  const story = state.api.stories.get(Number(id));
   return story|| new StoryApiState();
 }
 

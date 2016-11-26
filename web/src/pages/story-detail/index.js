@@ -4,17 +4,19 @@ import './styles.css';
 import CommentForm from './comment-form';
 import CommentList from './comment-list';
 import Layout from 'src/shared/layout';
+import Loading from 'src/shared/loading';
 import NotFound from 'src/pages/not-found';
 import React from 'react';
 import Story from 'src/shared/story';
 import type { Comment, Dispatch, Story as StoryType } from 'src/types';
 import { connect } from 'react-redux';
 import { fetchStory } from 'src/actions/stories';
-import { findComments, findStory } from 'src/selectors';
+import { findComments, findStory, findStoryApi } from 'src/selectors';
 
 type Props = {
   comments: Array<Comment>,
   dispatch: Dispatch,
+  isFetching: boolean,
   params: { id: string },
   story: ?StoryType,
 };
@@ -28,8 +30,9 @@ class StoryDetail extends React.Component {
   }
 
   render() {
-    const { comments, story } = this.props;
+    const { isFetching, comments, story } = this.props;
 
+    if (isFetching) return <Loading />;
     if (!story) return <NotFound />;
 
     return (
@@ -43,6 +46,7 @@ class StoryDetail extends React.Component {
 }
 
 const mapStateToProps = (state, { params: { id } }) => {
+  const { isFetching } = findStoryApi(state, id);
   const story = findStory(state, id);
 
   const comments = story
@@ -50,8 +54,9 @@ const mapStateToProps = (state, { params: { id } }) => {
     : [];
 
   return {
-    story,
+    isFetching,
     comments,
+    story,
   };
 };
 

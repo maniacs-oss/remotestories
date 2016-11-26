@@ -2,6 +2,7 @@
 
 import './styles.css';
 import Layout from 'src/shared/layout';
+import Loading from 'src/shared/loading';
 import Pagination from 'src/shared/pagination';
 import React from 'react';
 import Story from 'src/shared/story'
@@ -14,6 +15,7 @@ import { pageParam } from 'src/utils';
 
 type Props = {
   dispatch: Dispatch,
+  isFetching: boolean,
   location: Location,
   page: number,
   pattern: string,
@@ -40,7 +42,9 @@ class StoryList extends React.Component {
   };
 
   render() {
-    const { page, totalPages, stories } = this.props;
+    const { isFetching, page, totalPages, stories } = this.props;
+
+    if (isFetching) return <Loading skeletonCount={2} />;
 
     return (
       <Layout>

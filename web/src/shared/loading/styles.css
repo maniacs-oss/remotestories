@@ -1,0 +1,91 @@
+.Loading-skeleton {
+  background: #f6f7f9;
+  height: 98px;
+  overflow: hidden;
+  position: relative
+}
+
+.Loading-skeleton + .Loading-skeleton {
+  margin-top: 30px;
+}
+
+.Loading-skeleton::before {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to right, #f6f7f9 0%, #e9ebee 20%, #f6f7f9 40%, #f6f7f9 100%);
+  background-repeat: no-repeat;
+  background-size: 600px 104px;
+  content: ' ';
+  display: block;
+  height: 100%;
+  position: relative
+}
+
+.Loading-skeleton div {
+  background: #fff;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  right: 0
+}
+
+.Loading-skeleton .Loading-skeleton-1 {
+  left: 410px;
+  left: 440px;
+  top: 0;
+}
+
+.Loading-skeleton .Loading-skeleton-2 {
+  height: 10px;
+  top: 16px;
+}
+
+.Loading-skeleton .Loading-skeleton-3 {
+  height: 10px;
+  top: 42px;
+}
+
+.Loading-skeleton .Loading-skeleton-4 {
+  left: 300px;
+  top: 52px;
+}
+
+.Loading-skeleton .Loading-skeleton-5 {
+  height: 10px;
+  top: 68px;
+}
+
+.Loading-skeleton .Loading-skeleton-6 {
+  height: 20px;
+  top: 78px;
+  right: auto;
+  left: 30px;
+  width: 10px;
+}
+
+.Loading-skeleton .Loading-skeleton-7 {
+  height: 20px;
+  top: 78px;
+  right: auto;
+  left: 70px;
+  width: 10px;
+}
+
+.Loading-skeleton .Loading-skeleton-8 {
+  height: 20px;
+  top: 78px;
+  left: 110px;
+}
+
+@keyframes shimmer {
+  0% {
+    transform:translateX(-468px);
+  }
+
+  100%{
+    transform:translateX(468px);
+  }
+}
