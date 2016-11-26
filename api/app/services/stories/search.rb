@@ -1,7 +1,7 @@
 class Stories::Search
   include SearchObject.module(:paging)
 
-  scope { Story.all }
+  scope { Story.with_preloads.all }
 
   option(:filter) do |scope, value|
     value == 'popular' ? scope.popular : scope.by_date
