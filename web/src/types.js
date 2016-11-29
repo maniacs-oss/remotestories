@@ -17,7 +17,7 @@ export type Story = {
 
 export type Reaction = {
   id: number,
-  type: 'laugh' | 'cold_sweat',
+  kind: 'laugh' | 'cold_sweat',
 };
 
 export type Comment = {

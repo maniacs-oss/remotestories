@@ -10,5 +10,6 @@ const http = duxySuperagent(superagent)((_, client) => {
 export default duxy({ http }, ({ resources }) => {
   resources('stories', { only: ['findAll', 'findOne', 'create'] }, () => {
     resources('comments', { only: ['create'] });
+    resources('reactions', { only: ['create', 'delete'] });
   });
 });

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CommentsControllerTest < ActionDispatch::IntegrationTest
+class StoriesCommentsControllerTest < ActionDispatch::IntegrationTest
   test 'should post create' do
     story = stories(:one)
     body = 'lorem ipsum'

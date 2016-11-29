@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   resources :stories, only: %i(index show create) do
-    resources :comments, only: %i(create)
+    resources :comments, only: %i(create), module: 'stories'
+    resources :reactions, only: %i(create destroy), module: 'stories'
   end
 end

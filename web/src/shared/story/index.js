@@ -18,9 +18,9 @@ type Props = {
   reactions: { [key: string]: Array<Reaction> },
 };
 
-const REACTION_TYPES = [
-  { type: 'laugh', icon: '😄' },
-  { type: 'cold_sweat', icon: '😰' },
+const REACTIONS = [
+  { kind: 'laugh', icon: '😄' },
+  { kind: 'cold_sweat', icon: '😰' },
 ];
 
 class Story extends React.Component {
@@ -38,9 +38,7 @@ class Story extends React.Component {
 
         <div className="Story-meta">
           <div>
-            {REACTION_TYPES.map(
-              this.renderReactionButton
-            )}
+            {REACTIONS.map(this.renderReactionButton)}
             {this.renderCommentsButton()}
           </div>
 
@@ -52,11 +50,11 @@ class Story extends React.Component {
     );
   }
 
-  renderReactionButton = ({ type, icon }) => {
-    const reactions = this.props.reactions[type] || [];
+  renderReactionButton = ({ kind, icon }) => {
+    const reactions = this.props.reactions[kind] || [];
 
     return (
-      <a className="Story-meta-button" onClick={this.toggleReaction(type)} key={type}>
+      <a className="Story-meta-button" onClick={this.toggleReaction(kind)} key={kind}>
         <span className="Story-meta-button-icon">{icon}</span>
         &nbsp;
         {reactions.length}
@@ -77,12 +75,10 @@ class Story extends React.Component {
     );
   }
 
-  toggleReaction = (type) => (
-    () => {
-      const { dispatch, story } = this.props;
-      dispatch(toggleReaction({ story, type }));
-    }
-  );
+  toggleReaction = (kind) => () => {
+    const { dispatch, story } = this.props;
+    dispatch(toggleReaction({ story, kind }));
+  };
 }
 
 const mapStateToProps = (state, { story }) => {

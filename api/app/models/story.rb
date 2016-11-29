@@ -1,5 +1,6 @@
 class Story < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :reactions, dependent: :destroy
 
   validates :body, presence: true
 
@@ -9,7 +10,7 @@ class Story < ApplicationRecord
 
   class << self
     def preload_attributes
-      [:comments]
+      [:comments, :reactions]
     end
   end
 end

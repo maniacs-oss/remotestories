@@ -18,6 +18,8 @@ class Api::Stories
   end
 
   def reactions
-    []
+    stories
+      .map(&:reactions)
+      .flatten
   end
 end

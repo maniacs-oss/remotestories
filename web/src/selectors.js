@@ -38,6 +38,6 @@ export function findReactions(state: State, ids: Array<number>) {
     .get('reactions')
     .filter(({ id }) => ids.includes(id))
     .valueSeq()
-    .groupBy(({ type }) => type)
+    .groupBy(({ kind }) => kind)
     .toJS()
 }

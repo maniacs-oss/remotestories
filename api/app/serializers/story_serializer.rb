@@ -6,8 +6,4 @@ class StorySerializer < ActiveModel::Serializer
     :id,
     :reaction_ids,
   )
-
-  def reaction_ids
-    []
-  end
 end

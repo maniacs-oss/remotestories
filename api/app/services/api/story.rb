@@ -3,6 +3,8 @@ class Api::Story
 
   attr_accessor :story
 
+  delegate :reactions, to: :story
+
   class << self
     def find(id)
       story = Story.with_preloads.find id
@@ -18,9 +20,5 @@ class Api::Story
     story
       .comments
       .by_date
-  end
-
-  def reactions
-    []
   end
 end
