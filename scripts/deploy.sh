@@ -8,10 +8,10 @@ if ! git remote | grep api > /dev/null; then
   git remote add api https://github.com/ayrbot/remotestories-api.git
 fi
 
-git subtree push --prefix api/ api master
+git push api `git subtree split --prefix api master`:master --force
 
 if ! git remote | grep web > /dev/null; then
   git remote add web https://github.com/ayrbot/remotestories-web.git
 fi
 
-git subtree push --prefix web/ web master
+git push web `git subtree split --prefix web master`:master --force
