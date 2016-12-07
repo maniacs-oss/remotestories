@@ -10,13 +10,12 @@
   min-height: 275px;
 }
 
-.StoryForm-tip {
+.StoryForm-tips {
   color: #90949c;
   font-size: 14px;
   line-height: 20px;
-  margin: 0 0 30px;
 }
 
-.StoryForm-tip:last-child {
-  margin: 0;
+.StoryForm-tips li {
+  margin: 0 0 10px;
 }

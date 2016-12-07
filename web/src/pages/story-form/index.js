@@ -44,16 +44,18 @@ class StoryForm extends React.Component {
           </SubmitButton>
         </Form>
 
-        <h2 className="StoryForm-heading">
+        <Text component="h2" className="StoryForm-heading" variant="light">
           Tips about posting your story
-        </h2>
+        </Text>
 
-        <p className="StoryForm-tip">
-          Do not share names, location or information that could help… Pease Ben Kenobi, I need your help to write super good tips about posting a story.
-        </p>
-        <p className="StoryForm-tip">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut massa in dolor pulvinar efficitur. Phasellus lacinia, quam et hendrerit elementum, metus sem convallis augue, ac euismod turpis sapien a arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+        <ul className="StoryForm-tips">
+          <li>Don’t be rude in stories or comments.  This is not a place to debate or disagree, this is a place for simply sharing your experiences.</li>
+          <li>It doesn’t need to be a lengthy story, short ones work well too!</li>
+          <li>If the thread is interesting, post something thoughtful.</li>
+          <li>Don’t post the same story multiple times - if it was boring initially, it likely will be next time too.</li>
+          <li>Simple responses like ‘cool’ and ‘me too’ are fine but we added emoji reactions to serve that purpose.</li>
+          <li>Have fun with it!</li>
+        </ul>
       </Layout>
     );
   }
