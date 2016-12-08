@@ -21,6 +21,10 @@ class StoryForm extends React.Component {
 
   form: Form;
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  }
+
   render() {
     return (
       <Layout className="StoryForm">
@@ -60,12 +64,14 @@ class StoryForm extends React.Component {
     );
   }
 
-  createStory = (story) => {
-    if (story.body) {
-      this.props.dispatch(createStory(story));
+  createStory = async (story) => {
+    if (!story.body) {
+      this.form.reset();
+      return;
     }
 
-    this.form.reset();
+    const { id } = await this.props.dispatch(createStory(story));
+    this.context.router.transitionTo(`/stories/${ id }`);
   }
 
   submitOnCmdEnter = (event: SyntheticKeyboardEvent) => {

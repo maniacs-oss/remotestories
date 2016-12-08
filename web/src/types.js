@@ -3,7 +3,6 @@
 import type { Dispatch as ReduxDispatch } from 'redux';
 import type { State as CollectionsState } from 'src/reducers/api/collections';
 import type { State as EntitiesState } from 'src/reducers/entities';
-import type { State as HistoryState } from 'src/reducers/history';
 import type { State as StoriesState } from 'src/reducers/api/stories';
 import type { State as UserState } from 'src/reducers/user';
 
@@ -37,7 +36,6 @@ export type State = {
     stories: StoriesState,
   },
   entities: EntitiesState,
-  history: HistoryState,
   user: UserState,
 };
 

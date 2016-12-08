@@ -3,7 +3,6 @@
 import type { ThunkAction } from 'src/types';
 import { createUser } from 'src/actions/user';
 import { findStoryApi } from 'src/selectors';
-import { pushHistory } from './history';
 
 export const CREATE = 'stories/CREATE';
 export const FETCH = 'stories/FETCH';
@@ -13,9 +12,9 @@ export function createStory({ body }: { body: string }): ThunkAction {
   return async (dispatch, getState, api) => {
     await dispatch(createUser());
 
-    api.stories.create({ story: { body } }).then(({ body: story }) => {
+    return api.stories.create({ story: { body } }).then(({ body: story }) => {
       dispatch({ type: CREATE, story });
-      dispatch(pushHistory({ path: `/stories/${ story.id }` }));
+      return story;
     });
   };
 }

@@ -12,6 +12,7 @@ export function toggleReaction({ story, kind }: { story: Story, kind: string }):
     await dispatch(createUser());
 
     const state = getState();
+
     const reactionsByKind = findReactions(state, story.reaction_ids);
     const reactions = reactionsByKind[kind] || [];
     const reaction = reactions.find(({ id }) => state.user.reactionIds.includes(id));

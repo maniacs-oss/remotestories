@@ -5,7 +5,6 @@ import Authentication from 'src/lib/authentication';
 import Legal from 'src/pages/legal';
 import NotFound from 'src/pages/not-found';
 import React from 'react';
-import ReduxHistory from 'src/lib/redux-history';
 import StoryDetail from 'src/pages/story-detail';
 import StoryForm from 'src/pages/story-form';
 import StoryList from 'src/pages/story-list';
@@ -21,7 +20,6 @@ export default function App() {
       <BrowserRouter>
         <div>
           <Authentication />
-          <ReduxHistory />
 
           <Match exactly pattern="/" component={StoryList} />
           <Match pattern="/about" component={About} />
