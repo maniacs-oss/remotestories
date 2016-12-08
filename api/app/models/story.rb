@@ -1,4 +1,5 @@
 class Story < ApplicationRecord
+  belongs_to :user, required: true
   has_many :comments, dependent: :destroy
   has_many :reactions, dependent: :destroy
 

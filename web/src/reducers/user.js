@@ -15,7 +15,7 @@ export default function reducer(state: State = new State(), action: Action): Sta
   switch (action.type) {
     case RECEIVE:
       return state
-        .merge({ ...action.user, isPersisted: true });
+        .merge({ id: action.user.id, reactionIds: action.user.reaction_ids, isPersisted: true });
     case CREATE_REACTION:
       return state
         .update('reactionIds', (ids) => [...ids, action.reaction.id]);

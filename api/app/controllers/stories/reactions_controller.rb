@@ -1,4 +1,6 @@
 class Stories::ReactionsController < Stories::BaseController
+  before_action :authenticate_user, only: %i(create destroy)
+
   def create
     reaction = find_story.reactions.create! reaction_params
     render_json reaction
@@ -16,6 +18,8 @@ class Stories::ReactionsController < Stories::BaseController
   end
 
   def reaction_params
-    params.require(:reaction).permit(:kind)
+    params
+      .require(:reaction).permit(:kind)
+      .merge(user_id: current_user.id)
   end
 end

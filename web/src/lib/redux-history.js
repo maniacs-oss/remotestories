@@ -18,7 +18,7 @@ class ReduxHistory extends React.Component {
 
   componentDidMount() {
     const { history } = this.context;
-    this.props.dispatch(receiveHistory({ history }));
+    this.props.dispatch(receiveHistory(history));
   }
 
   render() {

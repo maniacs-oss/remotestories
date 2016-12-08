@@ -7,6 +7,14 @@ export function pageParam(location: Location): number {
   return parseInt(location.query.page, 10);
 }
 
-export function randomNumber(maximum: number): number {
-  return Math.ceil(Math.random() * (maximum - 1) + 1);
+export function canUseLocalStorage() {
+  const mod = 'modernizr';
+
+  try {
+    localStorage.setItem(mod, mod);
+    localStorage.removeItem(mod);
+    return true;
+  } catch (e) {
+    return false;
+  }
 }

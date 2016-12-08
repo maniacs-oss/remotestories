@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  before_action :authenticate_user, only: %i(create)
+
   def index
     api = Api::Stories.find params.slice(:filter), params[:page]
     render_json api
@@ -17,6 +19,8 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:body)
+    params
+      .require(:story).permit(:body)
+      .merge(user_id: current_user.id)
   end
 end

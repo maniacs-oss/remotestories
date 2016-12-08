@@ -3,7 +3,9 @@
 one:
   body: MyText
   story: one
+  user: joe
 
 two:
   body: MyText
   story: two
+  user: jane

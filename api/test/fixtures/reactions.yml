@@ -3,7 +3,9 @@
 one:
   story: one
   kind: 'laugh'
+  user: joe
 
 two:
   story: two
   kind: 'cold_sweat'
+  user: jane

@@ -5,8 +5,4 @@ class CommentSerializer < ActiveModel::Serializer
     :id,
     :user_id,
   )
-
-  def user_id
-    1337
-  end
 end

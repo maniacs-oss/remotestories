@@ -1,15 +1,15 @@
 /* @flow */
 
 import type { Story, ThunkAction } from 'src/types';
-import { createOrFetchUser } from 'src/actions/user';
+import { createUser } from 'src/actions/user';
 import { findReactions } from 'src/selectors';
 
 export const CREATE = 'reactions/CREATE';
 export const DESTROY = 'reactions/DESTROY';
 
 export function toggleReaction({ story, kind }: { story: Story, kind: string }): ThunkAction {
-  return (dispatch, getState, api) => {
-    dispatch(createOrFetchUser());
+  return async (dispatch, getState, api) => {
+    await dispatch(createUser());
 
     const state = getState();
     const reactionsByKind = findReactions(state, story.reaction_ids);

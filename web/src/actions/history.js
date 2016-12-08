@@ -5,7 +5,7 @@ import type { Action } from 'src/types';
 export const PUSH = 'history/PUSH';
 export const RECEIVE = 'history/RECEIVE';
 
-export function receiveHistory({ history }: { history: any }): Action {
+export function receiveHistory(history: any): Action {
   return { type: RECEIVE, history };
 }
 

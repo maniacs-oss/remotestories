@@ -1,7 +1,7 @@
 /* @flow */
 
 import type { ThunkAction } from 'src/types';
-import { createOrFetchUser } from 'src/actions/user';
+import { createUser } from 'src/actions/user';
 import { findStoryApi } from 'src/selectors';
 import { pushHistory } from './history';
 
@@ -10,8 +10,8 @@ export const FETCH = 'stories/FETCH';
 export const RECEIVE = 'stories/RECEIVE';
 
 export function createStory({ body }: { body: string }): ThunkAction {
-  return (dispatch, getState, api) => {
-    dispatch(createOrFetchUser());
+  return async (dispatch, getState, api) => {
+    await dispatch(createUser());
 
     api.stories.create({ story: { body } }).then(({ body: story }) => {
       dispatch({ type: CREATE, story });
