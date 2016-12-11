@@ -8,7 +8,7 @@
   "private": true,
   "devDependencies": {
     "flow-bin": "^0.36.0",
-    "react-scripts": "0.8.3",
+    "react-scripts": "0.8.4",
     "stylelint": "^7.6.0",
     "stylelint-config-standard": "^15.0.0"
   },
