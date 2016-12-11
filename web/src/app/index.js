@@ -1,7 +1,6 @@
 /* @flow */
 
 import About from 'src/pages/about';
-import Authentication from 'src/lib/authentication';
 import Legal from 'src/pages/legal';
 import NotFound from 'src/pages/not-found';
 import React from 'react';
@@ -9,18 +8,29 @@ import StoryDetail from 'src/pages/story-detail';
 import StoryForm from 'src/pages/story-form';
 import StoryList from 'src/pages/story-list';
 import store from 'src/store';
+import type { Dispatch } from 'src/types';
 import { BrowserRouter, Match, Miss, Redirect } from 'react-router'
 import { Provider } from 'react-redux'
+import { connect } from 'react-redux';
+import { fetchUser } from 'src/actions/user';
 
 const redirectToHome = () => <Redirect to="/" />;
 
-export default function App() {
-  return (
-    <Provider store={store}>
+type Props = {
+  dispatch: Dispatch,
+};
+
+class App extends React.Component {
+  props: Props;
+
+  componentDidMount() {
+    this.props.dispatch(fetchUser());
+  }
+
+  render() {
+    return (
       <BrowserRouter>
         <div>
-          <Authentication />
-
           <Match exactly pattern="/" component={StoryList} />
           <Match pattern="/about" component={About} />
           <Match pattern="/newest" component={StoryList} />
@@ -31,6 +41,14 @@ export default function App() {
           <Miss component={NotFound}/>
         </div>
       </BrowserRouter>
-    </Provider>
-  );
+    );
+  }
 }
+
+const withStore = (Component) => () => (
+  <Provider store={store}>
+    <Component />
+  </Provider>
+);
+
+export default withStore(connect()(App));
