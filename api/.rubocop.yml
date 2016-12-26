@@ -1,8 +1,10 @@
 AllCops:
-  RunRailsCops: true
   Exclude:
     - bin/**/*
     - db/schema.rb
+
+Rails:
+  Enabled: true
 
 # Disables "Use nested module/class definitions instead of compact style" warning
 ClassAndModuleChildren:
@@ -16,6 +18,13 @@ Documentation:
 Metrics/LineLength:
   Max: 120
 
+# Disables "Missing frozen string literal comment" warning
+FrozenStringLiteralComment:
+  Enabled: false
+
 # Enforce trailing commas - but only for multilines
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
