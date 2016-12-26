@@ -7,7 +7,7 @@
   },
   "private": true,
   "devDependencies": {
-    "flow-bin": "^0.36.0",
+    "flow-bin": "^0.37.4",
     "react-scripts": "0.7.0",
     "stylelint": "^7.6.0",
     "stylelint-config-standard": "^15.0.0"
@@ -25,7 +25,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "sanitize.css": "^4.1.0",
-    "superagent": "^3.0.0"
+    "superagent": "^3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
