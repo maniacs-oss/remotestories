@@ -16,6 +16,7 @@ type Props = {
   dispatch: Dispatch,
   story: StoryType,
   reactions: { [key: string]: Array<Reaction> },
+  userReactionIds: Array<number>,
 };
 
 const REACTIONS = [
