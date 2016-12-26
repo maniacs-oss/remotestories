@@ -52,9 +52,11 @@ class Story extends React.Component {
 
   renderReactionButton = ({ kind, icon }) => {
     const reactions = this.props.reactions[kind] || [];
+    const reaction = reactions.find(({ id }) => this.props.userReactionIds.includes(id));
+    const className = classNames('Story-meta-button', { 'is-active': !!reaction });
 
     return (
-      <a className="Story-meta-button" onClick={this.toggleReaction(kind)} key={kind}>
+      <a className={className} onClick={this.toggleReaction(kind)} key={kind}>
         <span className="Story-meta-button-icon">{icon}</span>
         &nbsp;
         {reactions.length}
@@ -81,11 +83,13 @@ class Story extends React.Component {
   };
 }
 
-const mapStateToProps = (state, { story }) => {
+const mapStateToProps = (state, { story, user }) => {
   const reactions = findReactions(state, story.reaction_ids);
+  const userReactionIds = state.user.reactionIds;
 
   return {
     reactions,
+    userReactionIds,
   };
 };
 

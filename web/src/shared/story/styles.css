@@ -22,9 +22,12 @@
   padding: 0 10px;
 }
 
-.Story-meta-button:hover,
-.Story-meta-button.is-active {
+.Story-meta-button:hover {
   color: #4b4f56;
+}
+
+.Story-meta-button.is-active {
+  color: #5c69ff;
 }
 
 .Story-meta-button:last-child {
