@@ -15,10 +15,8 @@ export function findStoryApi(state: State, id: number | string) {
 }
 
 export function findComments(state: State, ids: Array<number>) {
-  return state.entities
-    .get('comments')
-    .filter(({ id }) => ids.includes(id))
-    .toArray();
+  const comments = state.entities.get('comments');
+  return pluck(comments, ids);
 }
 
 export function findStory(state: State, id: number | string) {
@@ -27,10 +25,8 @@ export function findStory(state: State, id: number | string) {
 }
 
 export function findStories(state: State, ids: Array<number>) {
-  return state.entities
-    .get('stories')
-    .filter(({ id }) => ids.includes(id))
-    .toArray();
+  const stories = state.entities.get('stories');
+  return pluck(stories, ids);
 }
 
 export function findReactions(state: State, ids: Array<number>) {
@@ -40,4 +36,18 @@ export function findReactions(state: State, ids: Array<number>) {
     .valueSeq()
     .groupBy(({ kind }) => kind)
     .toJS()
+}
+
+function pluck(iterable, keys) {
+  const results = [];
+
+  for (let i = 0, l = keys.length; i < l; i++) {
+    const key = keys[i];
+
+    if (iterable.has(key)) {
+      results.push(iterable.get(key));
+    }
+  }
+
+  return results;
 }

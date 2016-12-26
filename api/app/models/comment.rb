@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :story, required: true
+  belongs_to :story, required: true, counter_cache: true
   belongs_to :user, required: true
 
   validates :body, presence: true

@@ -7,7 +7,7 @@ const http = duxySuperagent(superagent)((_foo, client) => {
   const baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000';
   client.url = baseUrl + client.url;
 
-  // NOTE(ayrton) enable CORS
+  // NOTE enable CORS
   client.withCredentials();
 
   const token = canUseLocalStorage() ? localStorage.token : null;

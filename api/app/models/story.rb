@@ -6,7 +6,7 @@ class Story < ApplicationRecord
   validates :body, presence: true
 
   scope :by_date, -> { order(arel_table[:created_at].desc) }
-  scope :popular, -> { all }
+  scope :popular, -> { order('reactions_count + comments_count DESC') }
   scope :with_preloads, -> { preload preload_attributes }
 
   class << self
