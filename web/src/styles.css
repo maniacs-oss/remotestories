@@ -29,3 +29,8 @@ textarea {
 button {
   font-family: inherit;
 }
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
